@@ -1,0 +1,29 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.texto{
+    width: 60%;
+    height: 2em;
+
+    
+}
+.placar, .bandeira{
+    width: 3em;
+    height: 2em;
+    text-align: center;
+    margin: 0em 0.5em;
+    vertical-align: bottom;
+}
+
+.placar-completo{
+    border: solid 1px;
+    padding: 0.5em;
+    background-color: beige;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.486);
+}
