@@ -65,10 +65,7 @@ function criar_placar(timeA,timeB){
 
     tabela.appendChild(placarCompleto)
 }
-//for (i=0;i<6;i++){
-  //  criar_placar()
 
-//}
 function criar_grupos (grupoNum){
     
     let grupo= document.createElement("div")
@@ -79,15 +76,10 @@ function criar_grupos (grupoNum){
     }
     
 }
-//criar_placar()
 
 for(a=1;a<9;a++){
     criar_grupos(a)
 }
-
-
-//criar_grupos(5)
-
 
 
 

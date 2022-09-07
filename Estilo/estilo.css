@@ -13,11 +13,15 @@ body{
 }
 
 #tabela{
-    width: 40%;
+    width: 30%;
 }
+
 .data-local{
     text-align: center;
     padding: 0.2em;
+}
+#selecao1{
+    width: 40px;
 }
 
 .placar, .bandeira{
@@ -27,6 +31,10 @@ body{
     margin: 0em 0.5em;
     vertical-align: bottom;
 }
+#bandeira1{
+    right: 200px;
+    
+}
 
 .placar-completo{
     border: solid 1px;
@@ -34,4 +42,5 @@ body{
     background-color: beige;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.486);
     margin: auto;
+    
 }
