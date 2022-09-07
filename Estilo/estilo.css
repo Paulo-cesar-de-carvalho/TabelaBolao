@@ -9,10 +9,17 @@ body{
 
 .texto{
     width: 60%;
-    height: 2em;
-
-    
+    height: 2em;    
 }
+
+#tabela{
+    width: 40%;
+}
+.data-local{
+    text-align: center;
+    padding: 0.2em;
+}
+
 .placar, .bandeira{
     width: 3em;
     height: 2em;
@@ -26,4 +33,5 @@ body{
     padding: 0.5em;
     background-color: beige;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.486);
+    margin: auto;
 }
