@@ -5,15 +5,25 @@
 
 body{
     font-family: Helvetica, Arial, sans-serif;
+    margin-left: 0.5em;
+}
+h1, h3{
+    text-align: center;
 }
 
+h3{
+    margin-top: 1.5em;
+}
+
+
 .texto{
-    width: 60%;
-    height: 2em;    
+    width: 15em;
+    height: 2em;
+    margin: 0.4em;    
 }
 
 #tabela{
-    width: 30%;
+    width: 34em;
 }
 
 .data-local{
@@ -21,7 +31,9 @@ body{
     padding: 0.2em;
 }
 #selecao1{
-    width: 40px;
+    width: 7em;
+    display: inline-block;
+    text-align: right;
 }
 
 .placar, .bandeira{
@@ -30,10 +42,6 @@ body{
     text-align: center;
     margin: 0em 0.5em;
     vertical-align: bottom;
-}
-#bandeira1{
-    right: 200px;
-    
 }
 
 .placar-completo{

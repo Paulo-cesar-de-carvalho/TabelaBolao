@@ -68,7 +68,8 @@ function criar_placar(timeA,timeB){
 
 function criar_grupos (grupoNum){
     
-    let grupo= document.createElement("div")
+    let grupo= document.createElement("h3")
+    
     grupo.innerText = "Grupo " + grupoLetra[grupoNum-1]
     tabela.appendChild(grupo)
     for (i=0;i<6;i++){
