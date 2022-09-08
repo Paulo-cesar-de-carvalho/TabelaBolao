@@ -25,11 +25,13 @@ function criar_placar(timeA,timeB){
     bandeira1.setAttribute("id","bandeira1")
     bandeira1.setAttribute("class","bandeira")
     bandeira1.setAttribute("src","Imagens/Bandeiras/"+ timeA +".png")
+    bandeira1.setAttribute("alt","Imagem Bandeira "+ timeA)
 
     let bandeira2 = document.createElement("img")
     bandeira2.setAttribute("id","bandeira2")
     bandeira2.setAttribute("class","bandeira")
     bandeira2.setAttribute("src","Imagens/Bandeiras/"+ timeB +".png")
+    bandeira2.setAttribute("alt","Imagem Bandeira "+ timeB)
 
     let selecao1 = document.createElement("span")
     selecao1.setAttribute("id","selecao1")
