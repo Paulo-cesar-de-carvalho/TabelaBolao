@@ -79,12 +79,12 @@ function criar_grupos (grupoNum){
     }
     
 }
-
 for(a=1;a<9;a++){
     criar_grupos(a)
 }
 
-
-
-
+let btnEnviar = document.querySelector("#btn-enviar")
+btnEnviar.addEventListener("click",function(){
+    alert("Em contrução")
+})
 

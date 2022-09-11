@@ -3,6 +3,7 @@
     padding: 0px;
 }
 
+
 body{
     font-family: Helvetica, Arial, sans-serif;
     margin-left: 0.5em;
@@ -23,7 +24,9 @@ h3{
 }
 
 #tabela{
-    width: 34em;
+    width: 100%;
+    max-width: 34em;
+    margin: auto;
 }
 
 .data-local{
