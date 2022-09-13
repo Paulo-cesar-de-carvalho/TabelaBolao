@@ -88,3 +88,36 @@ btnEnviar.addEventListener("click",function(){
     alert("Em contrução")
 })
 
+let opcao_campeao = document.querySelector("#campeao")
+let opcao_vice = document.querySelector("#vice-campeao")
+let opcao_terceiro = document.querySelector("#terceiro")
+
+//reduzir esses três próxmidos códigos e ordenar por ordem alfabética
+//criar uma função ordenando por odem alfabética
+
+for (time=0;time<4;time++){
+    for (grupos=0;grupos<8;grupos++){        
+        let selecao = selecoes[grupos][time]
+        let opcao = document.createElement("option")
+        opcao.innerText = selecao
+        opcao_campeao.appendChild(opcao)
+       
+    }    
+}
+for (time=0;time<4;time++){
+    for (grupos=0;grupos<8;grupos++){        
+        let selecao = selecoes[grupos][time]
+        let opcao = document.createElement("option")
+        opcao.innerText = selecao
+        opcao_vice.appendChild(opcao)
+    }    
+}
+
+for (time=0;time<4;time++){
+    for (grupos=0;grupos<8;grupos++){        
+        let selecao = selecoes[grupos][time]
+        let opcao = document.createElement("option")
+        opcao.innerText = selecao
+        opcao_terceiro.appendChild(opcao)
+    }    
+}
