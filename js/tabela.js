@@ -13,9 +13,9 @@ let ordem1 = [1,3,1,4,4,2]
 let ordem2 = [2,4,3,2,1,3]
 let grupoLetra = ["A","B","C","D","E","F","G","H"]
 
-function criar_placar(timeA,timeB){
+function criar_placar(timeA,timeB,grupo){
 
-    let tabela = document.querySelector("#tabela")
+    
 
     let dataLocal = document.createElement("div")
     dataLocal.setAttribute("class","data-local")
@@ -65,18 +65,24 @@ function criar_placar(timeA,timeB){
     placarCompleto.appendChild(bandeira2)
     placarCompleto.appendChild(selecao2)
 
-    tabela.appendChild(placarCompleto)
+    grupo.appendChild(placarCompleto)
 }
 
 function criar_grupos (grupoNum){
     
-    let grupo= document.createElement("h3")
+    let grupo = document.createElement("div")
+    grupo.setAttribute("class", "grupo") 
+    let tituloGrupo = document.createElement("h3")
+    let tabela = document.querySelector("#tabela")
     
-    grupo.innerText = "Grupo " + grupoLetra[grupoNum-1]
-    tabela.appendChild(grupo)
+    tituloGrupo.innerText = "Grupo " + grupoLetra[grupoNum-1]
+    grupo.appendChild(tituloGrupo)
+    
     for (i=0;i<6;i++){
-        criar_placar(selecoes[grupoNum-1][ordem1[i]-1],selecoes[grupoNum-1][ordem2[i]-1])
+        criar_placar(selecoes[grupoNum-1][ordem1[i]-1],selecoes[grupoNum-1][ordem2[i]-1],grupo)
     }
+
+    tabela.appendChild(grupo)
     
 }
 for(a=1;a<9;a++){
