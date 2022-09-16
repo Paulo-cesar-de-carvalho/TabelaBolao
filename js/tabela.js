@@ -1,11 +1,14 @@
 
 //Tabala.js é responsável por criar a tabela: jogos, grupos
 
+let jogo = 0
+
+
 function criar_placar(timeA,timeB,grupo){
 
     let dataLocal = document.createElement("div")
     dataLocal.setAttribute("class","data-local")
-    dataLocal.innerText = "Data - Horário - Estádio"
+    dataLocal.innerText = datas[jogo].toUpperCase() +" - "+ estadios[ordemEstadios[jogo]-1]
 
     let bandeira1 = document.createElement("img")
     bandeira1.setAttribute("id","bandeira1")
@@ -28,15 +31,19 @@ function criar_placar(timeA,timeB,grupo){
     selecao2.innerText = timeB
 
     let placar1 = document.createElement("input")
-    placar1.setAttribute("id","placar1")
+    placar1.setAttribute("id","A-"+(jogo+1))
     placar1.setAttribute("class","placar")
+    placar1.setAttribute("type", "number")
+    placar1.setAttribute("min", "0")
 
     let x = document.createElement("span")
     x.innerText = "  X  "
 
     let placar2 = document.createElement("input")
-    placar2.setAttribute("id","placar2")
+    placar2.setAttribute("id","B-"+(jogo+1))
     placar2.setAttribute("class","placar")
+    placar2.setAttribute("type", "number")
+    placar2.setAttribute("min", "0")
 
     let placarCompleto = document.createElement("div")
     placarCompleto.setAttribute("id","placar")
@@ -52,6 +59,7 @@ function criar_placar(timeA,timeB,grupo){
     placarCompleto.appendChild(selecao2)
 
     grupo.appendChild(placarCompleto)
+    jogo++
 }
 
 function criar_grupos (grupoNum){
