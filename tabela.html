@@ -11,40 +11,42 @@
     <body>
         <header>
             <h1>Bolão Copa - 2022</h1>
-            <p><label for="nome-completo">Infome seu nome completo: </label> <input type="text" name="" id="nome-completo" class="texto" placeholder="Digite seu nome completo"> </p>
-            <p><label for="cidade">Cidade: </label> <input type="text" name="" id="cidade" class="texto" Placeholder="Cidade"> </p>
-            <p><label>Celular:  <input type="tel" name="" id="celular" class="texto" Placeholder="(XX) XXXXX - XXXX"></label></p>
-            <p><label for="email">E-mail: </label> <input type="email" name="texto" class="texto" id="email" placeholder="Digite seuemail@email.com"></p>
+            <p><label for="nome-completo">Infome seu nome completo: </label> <input type="text" name="" id="nome-completo" class="texto" placeholder="Digite seu nome completo aqui"> </p>
+            <p><label for="cidade">Informe sua cidade: </label> <input type="text" name="" id="cidade" class="texto" Placeholder="Digite sua cidade aqui"> </p>
+            <p><label>Informe seu celular:  <input type="tel" name="" id="celular" class="texto" Placeholder="(XX) XXXXX - XXXX" maxlength="17"></label></p>
+            <p><label for="email">Infome seu e-mail: </label> <input type="email" name="texto" class="texto" id="email" placeholder="Digite seu e-mail aqui"></p>
             <p> 
                 <label for="Sim-Não">Deseja participar do grupo do bolão no whatsapp? </label>
                 <input type="radio" name="Sim-Não" id="Sim-whatsapp" checked >Sim
                 <input type="radio" name="Sim-Não" id="Não-whatsapp" >Não
-                <input type="button" value="Enviar" class="botao" id="btn-enviar">
+                
+                
+                
             </p>
             <p> 
                 <input type="checkbox" name="concordo" id="concordo">
                 <label for="concordo">Li e concordo com as regras do bolão </label>
-                
-                <a href="regras.html"><input type="button" value="Ver Regras" class="botao" id="btn-enviar"></a>
+                <a href="regras.html">Clique aqui para ler as regras do bolão</a>
             </p>
-            <p>Informe quem será o <strong>campeão</strong>  da Copa do Mundo de 2022:
-                <select name="campeao" class="texto" id="campeao">
+            <p>Selecione o <strong>campeão</strong>  da Copa do Mundo de 2022:
+                <select name="campeao" class="texto" id="campeao" >
                     <option value=""></option>
                 </select>
             </p>
-            <p>Informe quem será o <strong>vice-campeão</strong>  da Copa do Mundo de 2022:
+            <p>Selecione o <strong>vice-campeão</strong>  da Copa do Mundo de 2022:
                 <select name="vice-campeao" class="texto" id="vice-campeao">
                     <option value=""></option></select>
                 </select>
             </p>
-            <p>Informe quem será o <strong>terceiro colocado</strong>  da Copa do Mundo de 2022:
+            <p>Selecione o <strong>terceiro colocado</strong>  da Copa do Mundo de 2022:
                 <select name="terceiro" class="texto" id="terceiro">
                     <option value=""></option>
                 </select>
             </p>
-            <p>Informe quem será o <strong>quarto colocado</strong>  da Copa do Mundo de 2022:
+            <p>Selecione o <strong>quarto colocado</strong>  da Copa do Mundo de 2022:
                 <select name="quarto" class="texto" id="quarto">
                     <option value=""></option>
+                    
                 </select>
             </p>
         </header>
@@ -55,12 +57,17 @@
                 </div>
    
             </section>
-           
+            <p>Confira todos os dados e clique em enviar:   
+                <input type="button" value="Enviar" class="botao" id="btn-enviar">
+            </p>
+                
+            
         </main>
         <footer>
 
         </footer>
         <script src="js/selecoes.js"></script>
+        <script src="js/cabecalho.js"></script>
         <script src="js/tabela.js"></script>
         <script src="js/envio.js"></script>
         

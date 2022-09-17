@@ -39,21 +39,3 @@ let datas = ['20/11/22 13:00 dom','21/11/22 13:00 seg','25/11/22 10:00 sex','25/
     '02/12/22 16:00 sex','24/11/22 13:00 qui','24/11/22 10:00 qui','28/11/22 16:00 seg','28/11/22 10:00 seg','02/12/22 12:00 sex',
     '02/12/22 12:00 sex']
 
-//Carregar seleções nas opçoes em ordem alfabética:
-function carregar_opcoes(campo){
-    for (selecao in selecoesAlfabetica){
-        let opcao = document.createElement("option")
-        opcao.innerText = selecoesAlfabetica[selecao]
-        campo.appendChild(opcao)
-    }
-}
-
-let opcao_campeao = document.querySelector("#campeao")
-let opcao_vice = document.querySelector("#vice-campeao")
-let opcao_terceiro = document.querySelector("#terceiro")
-let opcao_quarto = document.querySelector("#quarto")
-
-carregar_opcoes(opcao_campeao)
-carregar_opcoes(opcao_vice)
-carregar_opcoes(opcao_terceiro)
-carregar_opcoes(opcao_quarto)
