@@ -93,3 +93,6 @@ p{
 strong{
     text-decoration: underline;
 }
+.invisivel{
+    display: none
+}
