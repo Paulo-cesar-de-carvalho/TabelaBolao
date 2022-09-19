@@ -13,8 +13,9 @@ celular.addEventListener("focus",function (){
 celular.addEventListener("blur",function (){
     if (celular.value == "("){
         celular.value = ""
-        btnApagarCelular.setAttribute("class", "invisivel")
+        
     }
+    btnApagarCelular.setAttribute("class", "invisivel")
 })
 
 function mascara_celular(){
