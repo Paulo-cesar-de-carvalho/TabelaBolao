@@ -52,30 +52,29 @@ carregar_opcoes(opcao_terceiro)
 carregar_opcoes(opcao_quarto)
 
 //Exibir a bandeira da seleção selecionada:
-function selecionar_bandeira(pais,campo){
-    
+function selecionar_bandeira(indice){
+    let paisSelecionado = document.querySelectorAll(".opcao-pais")[indice]
+    let bandeiraSelecionada = document.querySelectorAll(".bandeira-selecionada")[indice]
+    bandeiraSelecionada.innerText = ""
     let bandeiraCampeao = document.createElement("img")
-    bandeiraCampeao.setAttribute("src","Imagens/Bandeiras/"+ pais +".png")
+    bandeiraCampeao.setAttribute("src","Imagens/Bandeiras/"+ paisSelecionado.value +".png")
     bandeiraCampeao.setAttribute("class", "bandeira")
-    let opcao_campeao_pai = campo.parentElement
-    opcao_campeao_pai.appendChild(bandeiraCampeao)
+    bandeiraSelecionada.appendChild(bandeiraCampeao)
 }
 
 opcao_campeao.addEventListener("change",function (){
-    let paisSelecionado = document.getElementsByTagName("select")[0]
-    selecionar_bandeira(paisSelecionado.value,opcao_campeao)
+    selecionar_bandeira(0)
 })
 
 opcao_vice.addEventListener("change",function (){
-    let paisSelecionado = document.getElementsByTagName("select")[1]
-    selecionar_bandeira(paisSelecionado.value,opcao_vice)
+    selecionar_bandeira(1)
 })
+
 opcao_terceiro.addEventListener("change",function (){
-    let paisSelecionado = document.getElementsByTagName("select")[2]
-    selecionar_bandeira(paisSelecionado.value,opcao_terceiro)
+    selecionar_bandeira(2)
 })
+
 opcao_quarto.addEventListener("change",function (){
-    let paisSelecionado = document.getElementsByTagName("select")[3]
-    selecionar_bandeira(paisSelecionado.value,opcao_quarto)
+    selecionar_bandeira(3)
 })
 

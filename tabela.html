@@ -11,54 +11,51 @@
     <body>
         <header>
             <h1>Bolão Copa - 2022</h1>
-            <p><label for="nome-completo">Infome seu nome completo: </label> <input type="text" name="" id="nome-completo" class="texto" placeholder="Digite seu nome completo aqui"> </p>
-            <p><label for="cidade">Informe sua cidade: </label> <input type="text" name="" id="cidade" class="texto" Placeholder="Digite sua cidade aqui"> </p>
-            <p>
+            <p class="dados-pessoais"><label for="nome-completo">Infome seu nome completo: </label> <input type="text" name="" id="nome-completo" class="texto" placeholder="Digite seu nome completo aqui"> </p>
+            <p  class="dados-pessoais"><label for="cidade">Informe sua cidade: </label> <input type="text" name="" id="cidade" class="texto" Placeholder="Digite sua cidade aqui"> </p>
+            <p  class="dados-pessoais">
                 <label>Informe seu celular:  <input type="tel" name="" id="celular" class="texto" Placeholder="(XX) XXXXX - XXXX" maxlength="17"></label>
                 <input type="button" value="Apagar celular" id="btn-apagar-celular" class="invisivel">
             </p>
-            <p><label for="email">Infome seu e-mail: </label> <input type="email" name="texto" class="texto" id="email" placeholder="Digite seu e-mail aqui"></p>
-            <p> 
+            <p  class="dados-pessoais"><label for="email">Infome seu e-mail: </label> <input type="email" name="texto" class="texto" id="email" placeholder="Digite seu e-mail aqui"></p>
+            <p  class="dados-pessoais"> 
                 <label for="Sim-Não">Deseja participar do grupo do bolão no whatsapp? </label>
                 <input type="radio" name="Sim-Não" id="Sim-whatsapp" checked >Sim
                 <input type="radio" name="Sim-Não" id="Não-whatsapp" >Não
-                
-                
-                
             </p>
-            <p> 
+            <p  class="dados-pessoais"> 
                 <input type="checkbox" name="concordo" id="concordo">
                 <label for="concordo">Li e concordo com as regras do bolão </label>
                 <a href="regras.html">Clique aqui para ler as regras do bolão</a>
             </p>
-            <p>Selecione o <strong>campeão</strong>  da Copa do Mundo de 2022:
-                <select name="campeao" class="texto" id="campeao" >
+            <p class="dados-pessoais">Selecione o <strong>campeão</strong>  da Copa do Mundo de 2022:
+                <select name="campeao" class="opcao-pais" id="campeao" >
                     <option value=""></option>
                 </select>
+                <span class="bandeira-selecionada"></span>
             </p>
-            <p>Selecione o <strong>vice-campeão</strong>  da Copa do Mundo de 2022:
-                <select name="vice-campeao" class="texto" id="vice-campeao">
+            <p class="dados-pessoais">Selecione o <strong>vice-campeão</strong>  da Copa do Mundo de 2022:
+                <select name="vice-campeao" class="opcao-pais" id="vice-campeao">
                     <option value=""></option></select>
                 </select>
+                <span class="bandeira-selecionada"></span>
             </p>
-            <p>Selecione o <strong>terceiro colocado</strong>  da Copa do Mundo de 2022:
-                <select name="terceiro" class="texto" id="terceiro">
+            <p class="dados-pessoais">Selecione o <strong>terceiro colocado</strong>  da Copa do Mundo de 2022:
+                <select name="terceiro" class="opcao-pais" id="terceiro">
                     <option value=""></option>
                 </select>
+                <span class="bandeira-selecionada"></span>
             </p>
-            <p>Selecione o <strong>quarto colocado</strong>  da Copa do Mundo de 2022:
-                <select name="quarto" class="texto" id="quarto">
+            <p class="dados-pessoais">Selecione o <strong>quarto colocado</strong>  da Copa do Mundo de 2022:
+                <select name="quarto" class="opcao-pais" id="quarto">
                     <option value=""></option>
-                    
                 </select>
+                <span class="bandeira-selecionada"></span>
             </p>
         </header>
         <main>
             <section>
-                <h2>Tabela:</h2>
-                <div id="tabela" class="tabela">
-                </div>
-   
+                <div id="tabela" class="tabela"></div>
             </section>
             <p>Confira todos os dados e clique em enviar:   
                 <input type="button" value="Enviar" class="botao" id="btn-enviar">
