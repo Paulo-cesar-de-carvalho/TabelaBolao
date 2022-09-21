@@ -2,11 +2,19 @@
     margin: 0px;
     padding: 0px;
 }
-
+:root{
+    --cor-primaria:  rgb(0,191,255);
+    --cor-secundaria:  rgb(212, 66, 95);
+    --cor-terciaria:  rgb(248,248,255);
+    
+}
 body{
     font-family: Helvetica, Arial, sans-serif;
     max-width: 1200px;
-    background-color: rgb(188, 188, 252);
+    background-color: var(--cor-primaria);
+    width: 96%;
+    margin: 0px auto;
+    
 }
 
 h1{
@@ -14,29 +22,33 @@ h1{
     margin: 20px 0px;   
 }
 
-h3{
-    text-align: center;
-    margin-top: 1.5em;
-    margin-bottom: 0.3em;
-}
 
 .dados-pessoais{
-    border: 1px solid gray;
+    border: 1px solid --cor-secundaria;
     min-height: 60px;
     height: auto;
-    margin: 10px;
-    padding: 3px;
+    margin: 10px 0px;
+    padding: 2%;
     font-size: 20px;
-    width: 95%;
-    background-color: aquamarine;
+    width: 100%;
+    background-color: var(--cor-secundaria);
 }
 
-.texto, .botao, .opcao-pais{
-    width: 30em;
+.texto {
+    width: 18em;
     height: 2em;
     margin: 0.4em;
     font-weight: bold;
     font-size: 15px;    
+}
+
+.opcao-pais{
+    width: 18em;
+    height: 2em;
+    margin: 0.4em;
+    font-weight: bold;
+    font-size: 15px;
+    vertical-align: middle;
 }
 
 .grupo{
@@ -49,12 +61,19 @@ h3{
 .placar-completo{
     border: solid 1px;
     padding: 0.5em;
-    background-color: beige;
+    background-color:var(--cor-terciaria);
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.486);
     margin: auto;
     font-weight: bold;
     font-size: 13px;
 }
+
+h3{
+    text-align: center;
+    margin-top: 1.5em;
+    margin-bottom: 0.3em;
+}
+
 
 .data-local{
     text-align: center;
