@@ -52,6 +52,7 @@ carregar_opcoes(opcao_terceiro)
 carregar_opcoes(opcao_quarto)
 
 //Exibir a bandeira da seleção selecionada:
+
 function selecionar_bandeira(indice){
     let paisSelecionado = document.querySelectorAll(".opcao-pais")[indice]
     let bandeiraSelecionada = document.querySelectorAll(".bandeira-selecionada")[indice]
@@ -76,5 +77,5 @@ opcao_terceiro.addEventListener("change",function (){
 
 opcao_quarto.addEventListener("change",function (){
     selecionar_bandeira(3)
-})
+}) 
 
