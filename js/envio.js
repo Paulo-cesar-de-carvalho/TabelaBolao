@@ -1,4 +1,4 @@
-let btnEnviar = document.querySelector("#btn-enviar")
+/*let btnEnviar = document.querySelector("#btn-enviar")
 btnEnviar.addEventListener("click",function(){
     alert("Em contrução")
     //criar valida dados
@@ -20,7 +20,7 @@ function extrair_dados(){
     dadosCabecalho.push(document.querySelector("#Sim-whatsapp").value)
     dadosCabecalho.push(document.querySelector("#concordo").value)
 }
-
+*/
 /*
 //Enviar para o google forms:
 let googleForms = document.querySelector("#google-form")

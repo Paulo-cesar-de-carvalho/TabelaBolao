@@ -1,9 +1,10 @@
 *{
     margin: 0px;
     padding: 0px;
+    border: 0px;
 }
 :root{
-    --cor-primaria: #924326;
+    --cor-primaria: #980B34;
     --cor-secundaria:  rgb(255, 255,230);
     --cor-terciaria:  rgb(248,248,255);
     
@@ -11,15 +12,17 @@
 body{
     font-family: Helvetica, Arial, sans-serif;
     max-width: 1200px;
-    background-color: var(--cor-primaria);
+    /*background-color: var(--cor-primaria);*/
     width: 96%;
     margin: 0px auto;
-    
+    background: linear-gradient(to right, var(--cor-primaria), black);
 }
 
 h1{
     text-align: center;
-    margin: 20px 0px;   
+    margin: 20px 0px; 
+    color: silver;
+    text-decoration: underline;  
 }
 
 
@@ -32,6 +35,7 @@ h1{
     font-size: 20px;
     width: 100%;
     background-color: var(--cor-secundaria);
+    
 }
 
 .texto {
