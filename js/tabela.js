@@ -35,7 +35,7 @@ function criar_placar(timeA,timeB,grupo){
     placar1.setAttribute("class","placar")
     placar1.setAttribute("type", "number")
     placar1.setAttribute("min", "0")
-    placar1.setAttribute("name",`Jogo${ordemJogos[jogo]}A`)
+    placar1.setAttribute("name",`Jogo-A-${ordemJogos[jogo]}`)
 
     let x = document.createElement("span")
     x.innerText = "  X  "
@@ -45,7 +45,7 @@ function criar_placar(timeA,timeB,grupo){
     placar2.setAttribute("class","placar")
     placar2.setAttribute("type", "number")
     placar2.setAttribute("min", "0")
-    placar2.setAttribute("name",`Jogo${ordemJogos[jogo]}B`)
+    placar2.setAttribute("name",`Jogo-B-${ordemJogos[jogo]}`)
 
     let placarCompleto = document.createElement("div")
     placarCompleto.setAttribute("id","placar")

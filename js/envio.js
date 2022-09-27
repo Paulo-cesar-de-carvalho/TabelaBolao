@@ -21,9 +21,3 @@ function extrair_dados(){
     dadosCabecalho.push(document.querySelector("#concordo").value)
 }
 */
-/*
-//Enviar para o google forms:
-let googleForms = document.querySelector("#google-form")
-let labelForms = googleForms.querySelectorAll("div")    //".KHxj8b tL9Q4c"
-//labelForms.value = "TEste de preenchimento"
-console.log(googleForms)*/
