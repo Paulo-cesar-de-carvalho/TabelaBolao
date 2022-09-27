@@ -3,8 +3,8 @@
     padding: 0px;
 }
 :root{
-    --cor-primaria:  rgb(0,191,255);
-    --cor-secundaria:  rgb(212, 66, 95);
+    --cor-primaria: #924326;
+    --cor-secundaria:  rgb(255, 255,230);
     --cor-terciaria:  rgb(248,248,255);
     
 }
@@ -115,5 +115,7 @@ strong{
 }
 
 .botao{
-    width: 10em;
+    width: 450PX;
+    height: 150px;
+    font: 60px bold 
 }

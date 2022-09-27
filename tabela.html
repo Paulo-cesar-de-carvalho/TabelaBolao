@@ -9,67 +9,69 @@
         <link rel="stylesheet" href="Estilo/estilo.css">
     </head>
     <body>
-        <header>
-            <h1>Bolão Copa - 2022</h1>
-            <p class="dados-pessoais"><label for="nome-completo">Infome seu nome completo: </label> <input type="text" name="" id="nome-completo" class="texto" placeholder="Digite seu nome completo aqui"> </p>
-            <p  class="dados-pessoais"><label for="cidade">Informe sua cidade: </label> <input type="text" name="" id="cidade" class="texto" Placeholder="Digite sua cidade aqui"> </p>
-            <p  class="dados-pessoais">
-                <label>Informe seu celular:  <input type="tel" name="" id="celular" class="texto" Placeholder="(XX) XXXXX - XXXX" maxlength="17"></label>
-                <input type="button" value="Apagar celular" id="btn-apagar-celular" class="invisivel">
-            </p>
-            <p  class="dados-pessoais"><label for="email">Infome seu e-mail: </label> <input type="email" name="texto" class="texto" id="email" placeholder="Digite seu e-mail aqui"></p>
-            <p  class="dados-pessoais"> 
-                <label for="Sim-Não">Deseja participar do grupo do bolão no whatsapp? </label>
-                <input type="radio" name="Sim-Não" id="Sim-whatsapp" checked >Sim
-                <input type="radio" name="Sim-Não" id="Não-whatsapp" >Não
-            </p>
-            <p  class="dados-pessoais"> 
-                <input type="checkbox" name="concordo" id="concordo">
-                <label for="concordo">Li e concordo com as regras do bolão </label>
-                <a href="regras.html">Clique aqui para ler as regras do bolão</a>
-            </p>
-            <p class="dados-pessoais">Selecione o <strong>campeão</strong>  da Copa do Mundo de 2022:
-                <select name="campeao" class="opcao-pais" id="campeao" >
-                    <option value=""></option>
-                </select>
-                <span class="bandeira-selecionada"></span>
-            </p>
-            <p class="dados-pessoais">Selecione o <strong>vice-campeão</strong>  da Copa do Mundo de 2022:
-                <select name="vice-campeao" class="opcao-pais" id="vice-campeao">
-                    <option value=""></option></select>
-                </select>
-                <span class="bandeira-selecionada"></span>
-            </p>
-            <p class="dados-pessoais">Selecione o <strong>terceiro colocado</strong>  da Copa do Mundo de 2022:
-                <select name="terceiro" class="opcao-pais" id="terceiro">
-                    <option value=""></option>
-                </select>
-                <span class="bandeira-selecionada"></span>
-            </p>
-            <p class="dados-pessoais">Selecione o <strong>quarto colocado</strong>  da Copa do Mundo de 2022:
-                <select name="quarto" class="opcao-pais" id="quarto">
-                    <option value=""></option>
-                </select>
-                <span class="bandeira-selecionada"></span>
-            </p>
-        </header>
-        <main>
-            <section>
-                <div id="tabela" class="tabela"></div>
-            </section>
+        <form action="" method="post"></form>
+            <header>
+                
+                <h1>Bolão Copa - 2022</h1>
+                
+                <p class="dados-pessoais"><label for="nome-completo">Infome seu nome completo: </label> <input type="text" name="" id="nome-completo" class="texto" placeholder="Digite seu nome completo aqui"> </p>
+                <p  class="dados-pessoais"><label for="cidade">Informe sua cidade: </label> <input type="text" name="" id="cidade" class="texto" Placeholder="Digite sua cidade aqui"> </p>
+                <p  class="dados-pessoais">
+                    <label>Informe seu celular:  <input type="tel" name="" id="celular" class="texto" Placeholder="(XX) XXXXX - XXXX" maxlength="17"></label>
+                    <input type="button" value="Apagar celular" id="btn-apagar-celular" class="invisivel">
+                </p>
+                <p  class="dados-pessoais"><label for="email">Infome seu e-mail: </label> <input type="email" name="texto" class="texto" id="email" placeholder="Digite seu e-mail aqui"></p>
+                <p  class="dados-pessoais"> 
+                    <label for="Sim-Não">Deseja participar do grupo do bolão no whatsapp? </label>
+                    <input type="radio" name="Sim-Não" id="Sim-whatsapp" checked >Sim
+                    <input type="radio" name="Sim-Não" id="Não-whatsapp" >Não
+                </p>
+                <p  class="dados-pessoais"> 
+                    <input type="checkbox" name="concordo" id="concordo">
+                    <label for="concordo">Li e concordo com as regras do bolão </label>
+                    <a href="regras.html">Clique aqui para ler as regras do bolão</a>
+                </p>
+                <p class="dados-pessoais">Selecione o <strong>campeão</strong>  da Copa do Mundo de 2022:
+                    <select name="campeao" class="opcao-pais" id="campeao" >
+                        <option value=""></option>
+                    </select>
+                    <span class="bandeira-selecionada"></span>
+                </p>
+                <p class="dados-pessoais">Selecione o <strong>vice-campeão</strong>  da Copa do Mundo de 2022:
+                    <select name="vice-campeao" class="opcao-pais" id="vice-campeao">
+                        <option value=""></option></select>
+                    </select>
+                    <span class="bandeira-selecionada"></span>
+                </p>
+                <p class="dados-pessoais">Selecione o <strong>terceiro colocado</strong>  da Copa do Mundo de 2022:
+                    <select name="terceiro" class="opcao-pais" id="terceiro">
+                        <option value=""></option>
+                    </select>
+                    <span class="bandeira-selecionada"></span>
+                </p>
+                <p class="dados-pessoais">Selecione o <strong>quarto colocado</strong>  da Copa do Mundo de 2022:
+                    <select name="quarto" class="opcao-pais" id="quarto">
+                        <option value=""></option>
+                    </select>
+                    <span class="bandeira-selecionada"></span>
+                </p>
+                
+            </header>
+            
+            <main>
+                <section>
+                    <div id="tabela" class="tabela"></div>
+                </section>
             <p>Confira todos os dados e clique em enviar:   
-                <input type="button" value="Enviar" class="botao" id="btn-enviar">
+                <input type="submit" value="Enviar" class="botao" id="btn-enviar">
             </p>
-            
-            
-        </main>
-        <footer>
-            <div >
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeets8U7Pq8AUgaGoklQvsMSLKgM84O91-EDy5j0M4JQFCTZw/viewform?usp=sf_link" frameborder="0" width="900px" height="200px" id="google-form"></iframe>
-                <iframe src="https://www.formula1.com/en/racing/2022.html" frameborder="0" width="900px" height="200px" id="google-form"></iframe>
-            </div>    
+                
+            </main>
+        </form>    
+            <footer>
+                
 
-        </footer>
+            </footer>
         <script src="js/selecoes.js"></script>
         <script src="js/cabecalho.js"></script>
         <script src="js/tabela.js"></script>

@@ -28,6 +28,7 @@ let estadios = ['Estádio 974','Estádio Ahmed Bin Ali, Al Rayyan','Estádio Al 
     'Estádio Al Thumama, Doha','Estádio da Cidade da Educação','Estádio Internacional Khalifa','Estádio Nacional Lusail']
 
 //Data, horário e estádios:
+let ordemJogos = [01,03,18,19,33,34,02,04,20,17,35,36,05,07,24,22,39,40,08,06,23,21,37,38,11,10,28,25,43,44,12,09,26,27,41,42,16,13,31,29,47,48,15,14,32,30,45,46]
 let ordemEstadios = [3,5,5,7,3,7,7,2,3,2,2,5,8,1,8,6,1,8,4,6,1,4,6,4,5,7,3,2,7,3,2,3,5,7,2,5,8,4,1,4,8,1,1,6,8,6,6,4]
 let datas = ['20/11/22 13:00 dom','21/11/22 13:00 seg','25/11/22 10:00 sex','25/11/22 13:00 sex','29/11/22 12:00 ter',
     '29/11/22 12:00 ter','21/11/22 10:00 seg','21/11/22 16:00 seg','25/11/22 16:00 sex','25/11/22 07:00 sex','29/11/22 16:00 ter',
