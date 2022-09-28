@@ -21,3 +21,13 @@ function extrair_dados(){
     dadosCabecalho.push(document.querySelector("#concordo").value)
 }
 */
+//validar dados:
+let btnValidar = document.querySelector("#btn-validar")
+btnValidar.addEventListener("click",validar)
+
+function validar(){
+    console.log ("validei")
+
+}
+
+//inçluir erros em uma variável

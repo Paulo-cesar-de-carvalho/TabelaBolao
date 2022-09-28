@@ -5,23 +5,24 @@
 }
 :root{
     --cor-primaria: #980B34;
-    --cor-secundaria:  rgb(255, 255,230);
-    --cor-terciaria:  rgb(248,248,255);
+    --cor-secundaria:  silver;
+    --cor-terciaria:  silver;
     
 }
 body{
     font-family: Helvetica, Arial, sans-serif;
     max-width: 1200px;
     /*background-color: var(--cor-primaria);*/
-    width: 96%;
+    width: 100%;
     margin: 0px auto;
     background: linear-gradient(to right, var(--cor-primaria), black);
+    min-width: 400px;
 }
 
 h1{
     text-align: center;
     margin: 20px 0px; 
-    color: silver;
+    color: var(--cor-secundaria);
     text-decoration: underline;  
 }
 
@@ -54,10 +55,14 @@ h1{
     font-size: 15px;
     vertical-align: middle;
 }
+.tabela{
+    margin: 0px auto;
+    width: 100%;
+}
 
 .grupo{
     display: inline-block;
-    margin: 2%;
+    margin: 2px auto;
     width: 550px;
     
 }
@@ -76,6 +81,7 @@ h3{
     text-align: center;
     margin-top: 1.5em;
     margin-bottom: 0.3em;
+    color: var(--cor-secundaria);
 }
 
 
@@ -119,7 +125,8 @@ strong{
 }
 
 .botao{
-    width: 450PX;
-    height: 150px;
-    font: 60px bold 
+    width: 250px;
+    height: 75px;
+    font: 25px bold;
+    margin: 35px;
 }

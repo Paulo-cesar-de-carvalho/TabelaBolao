@@ -9,3 +9,7 @@ li{
     margin: 15px 0px;
     text-align: justify;
 }
+
+.romano{
+    list-style-type: lower-latin;
+}
