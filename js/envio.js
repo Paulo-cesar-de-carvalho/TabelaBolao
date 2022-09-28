@@ -26,7 +26,16 @@ let btnValidar = document.querySelector("#btn-validar")
 btnValidar.addEventListener("click",validar)
 
 function validar(){
-    console.log ("validei")
+
+    let preenchido=""
+    let placares = document.querySelectorAll(".placar")
+    let emBranco = 0
+    for (preenchido of placares){
+        if (preenchido.value==""){
+            emBranco ++
+        }
+    }
+    console.log(`Atenção! Existem ${emBranco} campos vazios`)
 
 }
 
