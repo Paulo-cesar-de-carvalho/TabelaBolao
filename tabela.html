@@ -16,10 +16,10 @@
         </header>    
         <main>
             <form action=" https://tales-h-carvalho-b8493ln6edxm62xt.socketxp.com/aposta" method="post">
-                <p class="dados-pessoais"><label for="nome-completo">Informe seu nome completo: </label> <input type="text" name="nome" id="nome-completo" class="texto" placeholder="Digite seu nome completo aqui"> </p>
+                <p class="dados-pessoais"><label for="nome-completo" >Informe seu nome completo: </label> <input type="text" name="nome" id="nome-completo" class="texto" required placeholder="Digite seu nome completo aqui"> </p>
                 <p  class="dados-pessoais"><label for="cidade">Informe sua cidade: </label> <input type="text" name="cidade" id="cidade" class="texto" Placeholder="Digite sua cidade aqui"> </p>
                 <p  class="dados-pessoais">
-                    <label>Informe seu celular:  <input type="tel" name="celular" id="celular" class="texto" Placeholder="(XX) XXXXX - XXXX" maxlength="17"></label>
+                    <label>Informe seu celular:  <input type="tel" name="celular" id="celular" class="texto" Placeholder="(XX) XXXXX - XXXX" required maxlength="17"></label>
                     <input type="button" value="Apagar celular" id="btn-apagar-celular" class="invisivel">
                 </p>
                 <p  class="dados-pessoais"><label for="email">Infome seu e-mail: </label> <input type="email" name="e-mail" class="texto" id="email" placeholder="Digite seu e-mail aqui"></p>
@@ -29,30 +29,30 @@
                     <input type="radio" name="grupo-whatsapp-sim" id="Não-whatsapp" >Não
                 </p>
                 <p  class="dados-pessoais"> 
-                    <input type="checkbox" name="concordo-regras" id="concordo">
+                    <input type="checkbox" name="concordo-regras" id="concordo" required>
                     <label for="concordo">Li e concordo com as regras do bolão </label>
                     <a href="regras.html">Clique aqui para ler as regras do bolão</a>
                 </p>
                 <p class="dados-pessoais">Selecione o <strong>campeão</strong>  da Copa do Mundo de 2022:
-                    <select name="campeao" class="opcao-pais" id="campeao" >
+                    <select name="campeao" class="opcao-pais" id="campeao" required >
                         <option value=""></option>
                     </select>
                     <span class="bandeira-selecionada"></span>
                 </p>
                 <p class="dados-pessoais">Selecione o <strong>vice-campeão</strong>  da Copa do Mundo de 2022:
-                    <select name="vice-campeao" class="opcao-pais" id="vice-campeao">
+                    <select name="vice-campeao" class="opcao-pais" id="vice-campeao" required>
                         <option value=""></option></select>
                     </select>
                     <span class="bandeira-selecionada"></span>
                 </p>
                 <p class="dados-pessoais">Selecione o <strong>terceiro colocado</strong>  da Copa do Mundo de 2022:
-                    <select name="terceiro" class="opcao-pais" id="terceiro">
+                    <select name="terceiro" class="opcao-pais" id="terceiro" required>
                         <option value=""></option>
                     </select>
                     <span class="bandeira-selecionada"></span>
                 </p>
                 <p class="dados-pessoais">Selecione o <strong>quarto colocado</strong>  da Copa do Mundo de 2022:
-                    <select name="quarto" class="opcao-pais" id="quarto">
+                    <select name="quarto" class="opcao-pais" id="quarto" required>
                         <option value=""></option>
                     </select>
                     <span class="bandeira-selecionada"></span>

@@ -61,8 +61,7 @@ h1{
 }
 
 .grupo{
-    display: inline-block;
-    margin: 2px auto;
+    
     width: 550px;
     
 }
@@ -82,6 +81,13 @@ h3{
     margin-top: 1.5em;
     margin-bottom: 0.3em;
     color: var(--cor-secundaria);
+}
+.tabela{
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    
 }
 
 
