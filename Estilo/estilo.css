@@ -11,12 +11,10 @@
 }
 body{
     font-family: Helvetica, Arial, sans-serif;
+    margin: auto;
     max-width: 1200px;
-    /*background-color: var(--cor-primaria);*/
-    width: 100%;
-    margin: 0px auto;
     background: linear-gradient(to right, var(--cor-primaria), black);
-    min-width: 400px;
+    min-width: 320px;
 }
 
 h1{
@@ -31,10 +29,10 @@ h1{
     border: 1px solid --cor-secundaria;
     min-height: 60px;
     height: auto;
-    margin: 10px 0px;
+    margin: 10px 5px;
     padding: 2%;
     font-size: 20px;
-    width: 100%;
+    
     background-color: var(--cor-secundaria);
     
 }
@@ -68,7 +66,7 @@ h1{
 
 .placar-completo{
     border: solid 1px;
-    padding: 0.5em;
+    padding: 13px 0px;
     background-color:var(--cor-terciaria);
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.486);
     margin: auto;
@@ -86,21 +84,21 @@ h3{
     width: 100%;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     
 }
 
 
 .data-local{
     text-align: center;
-    padding: 0.2em;
+    margin-bottom: 6px;
 }
 
 #selecao1, #selecao2{
     width: 8em;
     display: inline-block;
     text-align: right;
-    height: 35px;
+    height: 25px;
 }
 
 #selecao2{

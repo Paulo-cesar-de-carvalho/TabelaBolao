@@ -15,7 +15,7 @@ celular.addEventListener("blur",function (){
         celular.value = ""
         
     }
-    btnApagarCelular.setAttribute("class", "invisivel")
+    //btnApagarCelular.setAttribute("class", "invisivel")
 })
 
 function mascara_celular(){
@@ -30,6 +30,7 @@ function mascara_celular(){
 
 btnApagarCelular.addEventListener("click", function(){
     celular.value = ""
+    console.log ("apagou")
 })
 
 //Carregar seleções nas opçoes em ordem alfabética:
