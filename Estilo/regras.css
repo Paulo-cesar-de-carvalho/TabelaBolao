@@ -13,3 +13,8 @@ li{
 .romano{
     list-style-type: lower-latin;
 }
+
+strong{
+    text-decoration: underline;
+    
+}
