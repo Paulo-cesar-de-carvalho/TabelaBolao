@@ -3,7 +3,6 @@
 
 let jogo = 0
 
-
 function criar_placar(timeA,timeB,grupo){
 
     let dataLocal = document.createElement("div")
@@ -50,17 +49,20 @@ function criar_placar(timeA,timeB,grupo){
     placar2.setAttribute("name",`Jogo-B-${ordemJogos[jogo]}`)
 
     let placarCompleto = document.createElement("div")
+    let placarSemData = document.createElement("div")
+    placarSemData.setAttribute("class", "placar-sem-data")
     placarCompleto.setAttribute("id","placar")
     placarCompleto.setAttribute("class","placar-completo")
 
     placarCompleto.appendChild(dataLocal)
-    placarCompleto.appendChild(selecao1)
-    placarCompleto.appendChild(bandeira1)
-    placarCompleto.appendChild(placar1)
-    placarCompleto.appendChild(x)
-    placarCompleto.appendChild(placar2)
-    placarCompleto.appendChild(bandeira2)
-    placarCompleto.appendChild(selecao2)
+    placarSemData.appendChild(selecao1)
+    placarSemData.appendChild(bandeira1)
+    placarSemData.appendChild(placar1)
+    placarSemData.appendChild(x)
+    placarSemData.appendChild(placar2)
+    placarSemData.appendChild(bandeira2)
+    placarSemData.appendChild(selecao2)
+    placarCompleto.appendChild(placarSemData)
 
     grupo.appendChild(placarCompleto)
     jogo++
