@@ -28,10 +28,6 @@ function mascara_celular(){
     }
 }
 
-btnApagarCelular.addEventListener("click", function(){
-    celular.value = ""
-    console.log ("apagou")
-})
 
 //Carregar seleções nas opçoes em ordem alfabética:
 function carregar_opcoes(campo){

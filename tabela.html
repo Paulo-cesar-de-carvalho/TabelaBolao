@@ -25,12 +25,16 @@
             <p  class="dados-pessoais"><label for="email">Infome seu e-mail: </label> <input type="email" name="e-mail" class="texto" id="email" placeholder="Digite seu e-mail aqui"></p>
             <p  class="dados-pessoais"> 
                 <label for="grupo-whatsapp">Deseja participar do grupo do bolão no whatsapp? </label>
-                <input type="radio" name="grupo-whatsapp-sim" id="Sim-whatsapp" checked >Sim
-                <input type="radio" name="grupo-whatsapp-sim" id="Não-whatsapp" >Não
+                <select name="grupo-whatsapp" id="grupo-whatsapp" class="sim-nao" required>
+                    <option value="Sim"></option>
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
+                
             </p>
             <p  class="dados-pessoais"> 
                 <input type="checkbox" name="concordo-regras" id="concordo" required>
-                <label for="concordo">Li e concordo com as regras do bolão </label><br>
+                <label for="concordo">Li e concordo com as regras do bolão </label><br><br>
                 <a href="regras.html">Clique aqui para ler as regras do bolão</a>
             </p>
             <p class="dados-pessoais">Selecione o <strong>campeão</strong>  da Copa do Mundo de 2022:
@@ -59,6 +63,8 @@
             </p>
         
             <section id="tabela" class="tabela"></section>
+
+
             
             <p class="dados-pessoais">Confira todos os dados e clique em enviar:   
                 <input type="submit" value="Enviar" class="botao" id="btn-enviar">

@@ -55,7 +55,7 @@ h1{
 }
 
 .tabela{
-    
+    width: 98%;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
@@ -70,6 +70,7 @@ h1{
 }
 
 .placar-completo{
+    width: 380px;
     border: solid 1px;
     padding: 13px 0px;
     background-color:var(--cor-terciaria);
@@ -81,7 +82,7 @@ h1{
     flex-direction: column;
 }
 .placar-sem-data{
-    width: 550px;
+    width: 380px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,7 +103,7 @@ h3{
 }
 
 #selecao1, #selecao2{
-    width: 100px;
+    width: 80px;
     vertical-align: middle;
     text-align: right;
     height: 25px;
@@ -113,7 +114,7 @@ h3{
 }
 
 .placar, .bandeira{
-    width: 53px;
+    width: 42px;
     height: 35px;
     text-align: center;
   
@@ -141,3 +142,7 @@ strong{
     display: none
 }
 
+.sim-nao{
+    width: 60px;
+    font-size: 16px;
+}
