@@ -34,7 +34,7 @@
             </p>
             <p  class="dados-pessoais"> 
                 <input type="checkbox" name="concordo-regras" id="concordo" required>
-                <label for="concordo">Li e concordo com as regras do bolão </label><br><br>
+                <label for="concordo">Li e concordo com as regras do bolão. Chave pix - Celular (35)99982-7930 - Valor: R$50,00 </label><br><br>
                 <a href="regras.html">Clique aqui para ler as regras do bolão</a>
             </p>
             <p class="dados-pessoais">Selecione o <strong>campeão</strong>  da Copa do Mundo de 2022:
@@ -64,15 +64,29 @@
         
             <section id="tabela" class="tabela"></section>
 
+            <input type="text" name="data" id="data" class="invisivel">
 
+            <p class="dados-pessoais">
+                <label for="pix">Já fez o pix? </label>
+                <select name="pix" id="pix" class="sim-nao" required>
+                    <option value=""></option>
+                    <option value="">Sim</option>
+                    <option value="">Não</option>
+                </select>
+            </p><br>
             
-            <p class="dados-pessoais">Confira todos os dados e clique em enviar:   
+            
+
+            <p class="dados-pessoais">
+                <label for="btn-enviar">Confira todos os dados e clique em enviar:</label> 
                 <input type="submit" value="Enviar" class="botao" id="btn-enviar">
-            </p>
+            </p> 
+            
         </form>            
     </main>
     
     <footer>
+        <p class="dados-pessoais">Após enviar, aguarde sua confirmação de participação por e-mail ou whatsapp. Boa Sorte!</p>
         
 
     </footer>

@@ -104,6 +104,7 @@ h3{
 
 #selecao1, #selecao2{
     width: 80px;
+
     vertical-align: middle;
     text-align: right;
     height: 25px;
@@ -112,6 +113,7 @@ h3{
 #selecao2{
     text-align: left;
 }
+   
 
 .placar, .bandeira{
     width: 42px;
@@ -127,12 +129,19 @@ h3{
 }
 
 .botao{
-    width: 250px;
-    height: 75px;
+    width: 150px;
+    height: 40px;
     font: 25px bold;
     margin: 35px;
+    box-shadow: 3px 3px 3px black ;
 }
-
+.botao:hover{
+    background: linear-gradient(to right, var(--cor-primaria), black);
+    color: var(--cor-secundaria);
+    transition: 2s;
+    transform: scale(1.1);
+    
+}
 
 /*extra:*/
 strong{
