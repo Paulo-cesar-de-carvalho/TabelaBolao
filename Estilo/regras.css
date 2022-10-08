@@ -1,9 +1,13 @@
 body{
     font-family: Helvetica, Arial, sans-serif;
     margin: auto;
-    max-width: 940px;
-    width: 90%;
+    max-width: 900px;
+    width: 96%;
 
+}
+h1{
+    font-size: 20px;
+    text-decoration: underline;
 }
 li{
     margin: 15px 0px;
@@ -17,4 +21,18 @@ li{
 strong{
     text-decoration: underline;
     
+}
+footer{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+caption{
+    font-size: 5px;
+}
+.QR-code > img, .QR-code{
+    font-size: 12px;
+    text-align: center;
+    width: 120px;
+    height: 120px;    
 }

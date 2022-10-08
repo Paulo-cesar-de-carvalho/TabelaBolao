@@ -13,7 +13,7 @@ body{
     font-family: Helvetica, Arial, sans-serif;
     border-color: white;
     margin: auto;
-    max-width: 1150px;
+    max-width: 940px;
     background: linear-gradient(to right, var(--cor-primaria), black);
     min-width: 320px;
 }
