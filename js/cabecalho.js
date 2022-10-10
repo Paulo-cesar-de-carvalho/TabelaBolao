@@ -1,21 +1,18 @@
 //máscara do campo celular:
 let celular = document.querySelector("#celular")
-let btnApagarCelular = document.querySelector("#btn-apagar-celular")
+
 
 celular.addEventListener("keyup",mascara_celular)
 celular.addEventListener("focus",function (){
     if (celular.value == ""){
         celular.value +="("
     }
-    btnApagarCelular.setAttribute("class", "botao")
 })
 
 celular.addEventListener("blur",function (){
     if (celular.value == "("){
         celular.value = ""
-        
     }
-    //btnApagarCelular.setAttribute("class", "invisivel")
 })
 
 function mascara_celular(){

@@ -26,6 +26,7 @@ footer{
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
+    margin-bottom: 35px;
 }
 caption{
     font-size: 5px;

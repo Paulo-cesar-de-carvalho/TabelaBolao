@@ -18,8 +18,28 @@ function hora_atual (){
 }
 
 let divHora = document.querySelector("#data")
+let btnEnviar = document.querySelector("#btn-enviar")
+
 divHora.value = hora_atual()
 
-let diatesete = "7"
-diatesete = (diatesete.length==1)? `0${diatesete}`: diatesete
-console.log(diatesete)
+btnEnviar.addEventListener("click", function() {
+    divHora.value = hora_atual()
+})
+
+// function hora_atual_simplicifada(){
+//     let data = new Date ()
+//     let dados = [data.getYear()-100, data.getMonth()+1,data.getDate(),data.getHours(),data.getMinutes(),data.getSeconds() ]
+//     let dadosTratados = ""
+//     for (dado of dados){
+//         dado = dado.toString()
+//         dado = ((dado.length==1)? `0${dado}`: dado)
+//         if (dadosTratados==""){
+//             dadosTratados = dado
+//         } else{
+//             dadosTratados = dadosTratados + "-" + dado
+//         }
+//     }
+//     return dadosTratados
+// }
+
+
