@@ -28,10 +28,10 @@ h2{
     text-align: center;
     color: white;
     margin: 10px 0px;
-    text-decoration: underline;
+    
 }
 h2>a{
-    color: white;
+    color: lightblue
 }
 
 
