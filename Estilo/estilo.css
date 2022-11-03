@@ -24,6 +24,15 @@ h1{
     color: var(--cor-secundaria);
     text-decoration: underline;  
 }
+h2{
+    text-align: center;
+    color: white;
+    margin: 10px 0px;
+    text-decoration: underline;
+}
+a{
+    color: white;
+}
 
 
 .dados-pessoais{
