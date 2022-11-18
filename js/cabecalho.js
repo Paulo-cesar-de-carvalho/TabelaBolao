@@ -74,8 +74,8 @@ opcao_quarto.addEventListener("change",function (){
 }) 
 
 //mensagem de encerramento:
-let diaEncerramento = new Date(2022,10,17).getTime()
+let diaEncerramento = new Date(2022,10,19).getTime()
 let dataHoje = new Date().getTime()
-let diasRestantes = ((diaEncerramento-dataHoje)/1000/24/3600+1).toFixed(0)
+let diasRestantes = ((diaEncerramento-dataHoje)/1000/3600).toFixed(0)
 
-document.querySelector("#encerramento").innerText = `Atenção!!! Faltam  ${diasRestantes} dias para o encerramento das apostas`
+document.querySelector("#encerramento").innerText = `Atenção!!! Faltam  ${diasRestantes} horas para o encerramento das apostas`
