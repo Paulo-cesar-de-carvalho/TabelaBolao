@@ -5,6 +5,7 @@
 }
 :root{
     --cor-primaria: #980B34;
+    --cor-primaria-escura: #5e0b22;
     --cor-secundaria:  silver;
     --cor-terciaria:  silver;
     
@@ -163,4 +164,19 @@ strong{
 .sim-nao{
     width: 60px;
     font-size: 16px;
+}
+
+/* Tabela de classificação */
+th{
+    text-align: center;
+    position: sticky;
+    top: 0;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td, .table-striped>thead>tr:nth-child(even)>th {
+    background-color: var(--cor-primaria);
+}
+
+.table-striped>tbody>tr:nth-child(even)>td, .table-striped>thead>tr:nth-child(odd)>th {
+    background-color: var(--cor-primaria-escura);
 }
