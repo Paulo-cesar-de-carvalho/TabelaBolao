@@ -1,6 +1,6 @@
 const apostas = [
     {
-        "nome": "Paulo Cesar de Carvalho",
+        "nome": "Paulo César de Carvalho",
         "campeao": "França",
         "vice-campeao": "Holanda",
         "terceiro": "Brasil",
@@ -309,7 +309,7 @@ const apostas = [
         "Jogo-B-46": "2"
     },
     {
-        "nome": "Maria fernanda p borges ",
+        "nome": "Maria Fernanda P Borges ",
         "campeao": "Brasil",
         "vice-campeao": "França",
         "terceiro": "Argentina",
@@ -1663,8 +1663,8 @@ const apostas = [
         "Jogo-B-19": "0",
         "Jogo-A-33": "1",
         "Jogo-B-33": "0",
-        "Jogo-A-34": "1",
-        "Jogo-B-34": "1",
+        "Jogo-A-34": "0",
+        "Jogo-B-34": "0",
         "Jogo-A-2": "3",
         "Jogo-B-2": "1",
         "Jogo-A-4": "2",
@@ -1985,7 +1985,7 @@ const apostas = [
         "Jogo-A-35": "0",
         "Jogo-B-35": "3",
         "Jogo-A-36": "1",
-        "Jogo-B-36": "12",
+        "Jogo-B-36": "2",
         "Jogo-A-5": "2",
         "Jogo-B-5": "1",
         "Jogo-A-7": "0",
@@ -1997,7 +1997,7 @@ const apostas = [
         "Jogo-A-39": "1",
         "Jogo-B-39": "3",
         "Jogo-A-40": "1",
-        "Jogo-B-40": "34",
+        "Jogo-B-40": "3",
         "Jogo-A-8": "4",
         "Jogo-B-8": "2",
         "Jogo-A-6": "3",
@@ -2251,7 +2251,7 @@ const apostas = [
         "Jogo-A-47": "0",
         "Jogo-B-47": "2",
         "Jogo-A-48": "1",
-        "Jogo-B-48": "12",
+        "Jogo-B-48": "1",
         "Jogo-A-15": "2",
         "Jogo-B-15": "1",
         "Jogo-A-14": "1",
@@ -4223,7 +4223,7 @@ const apostas = [
         "Jogo-B-46": "2"
     },
     {
-        "nome": "Wesley roger silva ",
+        "nome": "Wesley Roger Silva ",
         "campeao": "Brasil",
         "vice-campeao": "Bélgica",
         "terceiro": "Argentina",
