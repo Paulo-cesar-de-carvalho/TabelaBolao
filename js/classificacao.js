@@ -96,7 +96,7 @@ function preConstruirTabela() {
     // Pré-construir a tabela, para que a página não fique vazia até ter um retorno da API
     for (let i = 0; i < apostas.length; i++) {
         const row = document.createElement("tr")
-        const tds = ["1º", apostas[i].nome, "", "", ""]
+        const tds = ["", apostas[i].nome, "", "", ""]
         const aligns = ["center", "left", "center", "center", "center"]
         for (let j = 0; j < tds.length; j++) {
             const tdObj = document.createElement("td")
