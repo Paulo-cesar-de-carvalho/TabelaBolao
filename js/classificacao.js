@@ -76,7 +76,7 @@ function calcularClassificacao(placaresReais) {
             atual.placares == anterior.placares &&
             atual.resultados == anterior.resultados
         ) {
-            atual.pos = anterior.pos
+            atual.pos = null
         }
         else {
             atual.pos = i+1
@@ -116,7 +116,7 @@ function construirTabela(placaresReais) {
 	for (let i = 0; i < classificacao.length; i++) {
 		const row = tbodyClassificacao.children[i]
 		const td = []
-		td[0] = classificacao[i]["pos"] + "º"
+		td[0] = classificacao[i]["pos"] == null ? "" : classificacao[i]["pos"] + "º"
 		td[1] = classificacao[i]["nome"]
 		td[2] = classificacao[i]["pontos"]
 		td[3] = classificacao[i]["placares"]
