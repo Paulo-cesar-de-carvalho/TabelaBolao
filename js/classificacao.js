@@ -127,10 +127,10 @@ function construirTabela(placaresReais) {
 	}
 }
 
-function criarPlacar(jogo, timeA, timeB, placarA, placarB) {
+function criarPlacar(estadio, data, timeA, timeB, placarA, placarB) {
     const dataLocal = document.createElement("div")
     dataLocal.setAttribute("class","data-local")
-    dataLocal.innerText = datas[jogo].toUpperCase() +" - "+ estadios[ordemEstadios[jogo]-1]
+    dataLocal.innerText = data.toUpperCase() +" - "+ estadio
 
     const bandeira1 = document.createElement("img")
     bandeira1.setAttribute("id","bandeira1")
@@ -186,19 +186,35 @@ function criarPlacar(jogo, timeA, timeB, placarA, placarB) {
 function construirPlacares(placaresReais) {
     const resultadosOficiais = document.getElementById("resultados-oficiais")
 
+    const jogos = []
+    const estadiosJogos = []
+    const datasJogos = []
+    const ordem = []
+
     let jogo = 0
     for (let a = 1; a < 9; a++) {
         for (let i = 0; i < 6; i++) {
-            const placar = criarPlacar(
-                jogo,
+            jogos.push([
                 selecoes[a-1][ordem1[i]-1],
-                selecoes[a-1][ordem2[i]-1],
-                placaresReais[ordemJogos[jogo]-1].placar1,
-                placaresReais[ordemJogos[jogo]-1].placar2,
-            )
-            resultadosOficiais.appendChild(placar)
+                selecoes[a-1][ordem2[i]-1]
+            ])
+            estadiosJogos.push(estadios[ordemEstadios[jogo]-1])
+            datasJogos.push(datas[jogo])
+            ordem[ordemJogos[jogo]-1] = jogo
             jogo++
         }
+    }
+
+    for (const j of ordem) {
+        const placar = criarPlacar(
+            estadiosJogos[j],
+            datasJogos[j],
+            jogos[j][0],
+            jogos[j][1],
+            placaresReais[j].placar1,
+            placaresReais[j].placar2
+        )
+        resultadosOficiais.appendChild(placar)
     }
 }
 
