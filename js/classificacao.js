@@ -6,15 +6,28 @@ async function pegarDadosReais() {
     const FIFA_API_URL = "https://api.fifa.com/api/v3/calendar/matches?from=2022-11-19T00%3A00%3A00Z&to=2022-12-02T23%3A59%3A59Z&language=en&count=500&idCompetition=17"
     const placares = await (await fetch(FIFA_API_URL)).json()
     const dadosFiltrados = []
+    const horaAtual = new Date()
     // id_jogos vem de id_jogos.js
     for (const id of id_jogos) {
         const placar = placares.Results.find(obj => obj.IdMatch == id)
-        dadosFiltrados.push({
-            'time1': placar.Home.Abbreviation,
-            'time2': placar.Away.Abbreviation,
-            'placar1': placar.Home.Score,
-            'placar2': placar.Away.Score
-        })
+        const horaPlacar = new Date(placar.Date)
+        // Placar só aparece se faltar 15 minutos para a partida
+        if (horaAtual.getTime() < (horaPlacar.getTime() - 15*60*1000)) {
+            dadosFiltrados.push({
+                'time1': placar.Home.Abbreviation,
+                'time2': placar.Away.Abbreviation,
+                'placar1': null,
+                'placar2': null
+            })
+        }
+        else {
+            dadosFiltrados.push({
+                'time1': placar.Home.Abbreviation,
+                'time2': placar.Away.Abbreviation,
+                'placar1': placar.Home.Score,
+                'placar2': placar.Away.Score
+            })
+        }
     }
     // Eu coloquei esse console.log para ver se os dados estão vindo corretamente, mas pode tirar
     console.log("Placares reais")
