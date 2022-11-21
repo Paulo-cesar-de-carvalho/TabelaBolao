@@ -205,14 +205,14 @@ function construirPlacares(placaresReais) {
         }
     }
 
-    for (const j of ordem) {
+    for (let i = 0; i < 48; i++) {
         const placar = criarPlacar(
-            estadiosJogos[j],
-            datasJogos[j],
-            jogos[j][0],
-            jogos[j][1],
-            placaresReais[j].placar1,
-            placaresReais[j].placar2
+            estadiosJogos[ordem[i]],
+            datasJogos[ordem[i]],
+            jogos[ordem[i]][0],
+            jogos[ordem[i]][1],
+            placaresReais[i].placar1,
+            placaresReais[i].placar2
         )
         resultadosOficiais.appendChild(placar)
     }
