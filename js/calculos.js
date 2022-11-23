@@ -37,12 +37,14 @@ async function pegarDadosReais() {
     return dadosFiltrados
 }
 
-function calcularPontuacaoPalpite(placarPalpite1, placarPalpite2, placarReal1, placarReal2) {
-    let pontos = 0
-    pontos += (placarPalpite1 == placarReal1 || placarPalpite2 == placarReal2) * 2;
-    pontos += (Math.sign(placarPalpite1 - placarPalpite2) == Math.sign(placarReal1 - placarReal2)) * 5;
-    pontos += (placarPalpite1 == placarReal1 && placarPalpite2 == placarReal2) * 3;
-    return pontos
+function calcularPontuacaoPalpite(placarPalpite1, placarPalpite2, placarReal1, placarReal2, multiplicador) {
+    const umPlacarCorreto = (placarPalpite1 == placarReal1 || placarPalpite2 == placarReal2)
+    const resultadoCorreto = (Math.sign(placarPalpite1 - placarPalpite2) == Math.sign(placarReal1 - placarReal2))
+    const todoPlacarCorreto = (placarPalpite1 == placarReal1 && placarPalpite2 == placarReal2)
+    let pontos = umPlacarCorreto * 2 + resultadoCorreto * 5 + todoPlacarCorreto * 3
+    if (todoPlacarCorreto && placarReal1 + placarReal2 >= 6)
+        pontos *= 2
+    return pontos * multiplicador
 }
 
 function calcularClassificacao(placaresReais) {
@@ -58,8 +60,9 @@ function calcularClassificacao(placaresReais) {
             }
             const apostaPlacar1 = aposta[`Jogo-A-${i+1}`]
             const apostaPlacar2 = aposta[`Jogo-B-${i+1}`]
+            const multiplicador = (placarReal.time1 == "BRA" || placarReal.time2 == "BRA") ? 2 : 1
             jogador["pontos"] += calcularPontuacaoPalpite(
-                apostaPlacar1, apostaPlacar2, placarReal.placar1, placarReal.placar2
+                apostaPlacar1, apostaPlacar2, placarReal.placar1, placarReal.placar2, multiplicador
             )
             if (apostaPlacar1 == placarReal.placar1 && apostaPlacar2 == placarReal.placar2) {
                 jogador["placares"]++
