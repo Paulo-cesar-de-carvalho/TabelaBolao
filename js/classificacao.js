@@ -39,7 +39,12 @@ function construirTabela(placaresReais) {
             }
         }
 		td[0] = v
-		td[1] = classificacao[i]["pos"] == null ? "" : classificacao[i]["pos"] + "º"
+        td[1] = classificacao[i]["pos"] + "º"
+        if (i > 0) {
+            if (classificacao[i]["pos"] == classificacao[i-1]["pos"]) { 
+                td[1] = ""
+            }
+        }
 		td[2] = classificacao[i]["nome"]
 		td[3] = classificacao[i]["pontos"]
 		td[4] = classificacao[i]["placares"]
