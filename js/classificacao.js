@@ -32,10 +32,10 @@ function construirTabela(placaresReais) {
         let v = ""
         if (classificacao[i]["var"] != 0) {
             if (classificacao[i]["var"] > 0) {
-                v = "<span class='var-vermelho'>" + classificacao[i]["var"] + "v</span>"
+                v = "<span class='var-vermelho'>" + classificacao[i]["var"] + "↓</span>"
             }
             else {
-                v = "<span class='var-verde'>" + (-classificacao[i]["var"]) + "^</span>"
+                v = "<span class='var-verde'>" + (-classificacao[i]["var"]) + "↑</span>"
             }
         }
 		td[0] = v
