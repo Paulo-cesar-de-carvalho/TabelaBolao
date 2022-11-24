@@ -1,9 +1,55 @@
 
-//Tabala.js é responsável por criar a tabela: jogos, grupos
 
-let jogo = 0
+function criar_oitavas_de_final (selecoesMandantes,selecoesVisitante){
+    
+    let grupo = document.createElement("div")
+    grupo.setAttribute("class", "grupo") 
+    let tituloGrupo = document.createElement("h3")
+    let tabela = document.querySelector("#tabela")
+    
+    tituloGrupo.innerText = "Oitavas-de-final"
+    grupo.appendChild(tituloGrupo)
+    
+    for (i=0;i<8;i++){
+        criar_placar(selecoesMandantes[i],selecoesVisitante[i],grupo)
+    }
 
-function criar_placar(timeA,timeB,grupo){
+    tabela.appendChild(grupo)
+    
+}
+
+
+
+//Dados oitavas de final:
+let a1 = "Holanda"
+let b1 = "Inglaterra"
+let c1 = "Argentina"
+let d1 = "França"
+let e1 = "Alemanha"
+let f1 = "Bélgica"
+let g1 = "Brasil"
+let h1 = "Uruguai"
+let a2 = "Equador"
+let b2 = "Estados Unidos"
+let c2 = "México"
+let d2 = "Dinamarca"
+let e2 = "Espanha"
+let f2 = "Croácia"
+let g2 = "Suíça"
+let h2 = "Portugal"
+
+// ordem jogos:
+let selecoesMandantes = [a1, c1, b1, d1, e1, g1, f1, h1]
+let selecoesVisitante = [b2, d2, a2, c2, f2, h2, e2, g2]
+
+criar_oitavas_de_final(selecoesMandantes,selecoesVisitante)
+//Estádios:
+const estadiosOitavas = ['Estádio 974, Doha','Estádio Ahmed Bin Ali, Al Rayyan','Estádio Al Bayt, Al Khor','Estádio Al Janoub, Al Wakrah',
+    'Estádio Al Thumama, Doha','Est. Cidade da Educação, Al Rayyan','Estádio Inter. Khalifa, Al Rayyan','Estádio Nacional Lusail']
+
+
+
+function criar_placar_oitavas(timeA,timeB,grupo){
 
     let dataLocal = document.createElement("div")
     dataLocal.setAttribute("class","data-local")
@@ -67,26 +113,3 @@ function criar_placar(timeA,timeB,grupo){
     grupo.appendChild(placarCompleto)
     jogo++
 }
-
-function criar_grupos (grupoNum){
-    
-    let grupo = document.createElement("div")
-    grupo.setAttribute("class", "grupo") 
-    let tituloGrupo = document.createElement("h3")
-    let tabela = document.querySelector("#tabela")
-    
-    tituloGrupo.innerText = "Grupo " + grupoLetra[grupoNum-1]
-    grupo.appendChild(tituloGrupo)
-    
-    for (i=0;i<6;i++){
-        criar_placar(selecoes[grupoNum-1][ordem1[i]-1],selecoes[grupoNum-1][ordem2[i]-1],grupo)
-    }
-
-    tabela.appendChild(grupo)
-    
-}
-// for(a=1;a<9;a++){
-//     criar_grupos(a)
-// }
-
-
