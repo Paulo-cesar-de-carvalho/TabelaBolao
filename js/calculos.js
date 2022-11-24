@@ -15,6 +15,7 @@ async function pegarDadosReais() {
         if (horaAtual.getTime() < (horaPlacar.getTime() - 15*60*1000)) {
             dadosFiltrados.push({
                 'data': horaPlacar,
+                'dia': new Date(horaPlacar.getFullYear(), horaPlacar.getMonth(), horaPlacar.getDate()),
                 'time1': placar.Home.Abbreviation,
                 'time2': placar.Away.Abbreviation,
                 'placar1': null,
@@ -24,6 +25,7 @@ async function pegarDadosReais() {
         else {
             dadosFiltrados.push({
                 'data': horaPlacar,
+                'dia': new Date(horaPlacar.getFullYear(), horaPlacar.getMonth(), horaPlacar.getDate()),
                 'time1': placar.Home.Abbreviation,
                 'time2': placar.Away.Abbreviation,
                 'placar1': placar.Home.Score,
@@ -48,51 +50,78 @@ function calcularPontuacaoPalpite(placarPalpite1, placarPalpite2, placarReal1, p
 }
 
 function calcularClassificacao(placaresReais) {
-    const classificacao = []
-    // apostas vem de apostas.js
-    for (const aposta of apostas) {
-        const jogador = {"pos": 1, "nome": aposta.nome, "placares": 0, "resultados": 0, "pontos": 0}
-        for (let i = 0; i < 48; i++) {
-            const placarReal = placaresReais[i]
-            // Se não tiver resultado disponível, ignora essa iteração
-            if (placarReal.placar1 === null || placarReal.placar2 === null) {
-                continue
-            }
-            const apostaPlacar1 = aposta[`Jogo-A-${i+1}`]
-            const apostaPlacar2 = aposta[`Jogo-B-${i+1}`]
-            const multiplicador = (placarReal.time1 == "BRA" || placarReal.time2 == "BRA") ? 2 : 1
-            jogador["pontos"] += calcularPontuacaoPalpite(
-                apostaPlacar1, apostaPlacar2, placarReal.placar1, placarReal.placar2, multiplicador
-            )
-            if (apostaPlacar1 == placarReal.placar1 && apostaPlacar2 == placarReal.placar2) {
-                jogador["placares"]++
-            }
-            if (Math.sign(apostaPlacar1 - apostaPlacar2) == Math.sign(placarReal.placar1 - placarReal.placar2)) {
-                jogador["resultados"]++
-            }
+    // Datas únicas que já passaram
+    const datas = []
+    for (const placar of placaresReais) {
+        if (placar.placar1 === null || placar.placar2 === null) {
+            continue
         }
-        classificacao.push(jogador)
+        if (!datas.find(d => d.getTime() === placar.dia.getTime()))
+            datas.push(placar.dia)
     }
-    // Critérios de desempate
-    classificacao.sort((a,b) => (a.nome.localeCompare(b.nome))) // Ordem alfabética
-    classificacao.sort((a,b) => (a.resultados <= b.resultados) ? 1 : -1)
-    classificacao.sort((a,b) => (a.placares <= b.placares) ? 1 : -1)
-    classificacao.sort((a,b) => (a.pontos <= b.pontos) ? 1 : -1)
-    // Cálculo das posições
-    for (let i = 1; i < classificacao.length; i++) {
-        const atual = classificacao[i]
-        const anterior = classificacao[i-1]
-        if (
-            atual.pontos == anterior.pontos &&
-            atual.placares == anterior.placares &&
-            atual.resultados == anterior.resultados
-        ) {
-            atual.pos = null
+    const classificacaoPorData = []
+    for (const data of datas) {
+        const placaresReaisFiltrados = placaresReais.filter(
+            p => (p.dia.getTime() <= data.getTime())
+        )
+        const classificacao = []
+        // apostas vem de apostas.js
+        for (const aposta of apostas) {
+            const jogador = {"pos": 1, "var": 0, "nome": aposta.nome, "placares": 0, "resultados": 0, "pontos": 0}
+            for (let i = 0; i < placaresReaisFiltrados.length; i++) {
+                const placarReal = placaresReaisFiltrados[i]
+                // Se não tiver resultado disponível, ignora essa iteração
+                if (placarReal.placar1 === null || placarReal.placar2 === null) {
+                    continue
+                }
+                const apostaPlacar1 = aposta[`Jogo-A-${i+1}`]
+                const apostaPlacar2 = aposta[`Jogo-B-${i+1}`]
+                const multiplicador = (placarReal.time1 == "BRA" || placarReal.time2 == "BRA") ? 2 : 1
+                jogador["pontos"] += calcularPontuacaoPalpite(
+                    apostaPlacar1, apostaPlacar2, placarReal.placar1, placarReal.placar2, multiplicador
+                )
+                if (apostaPlacar1 == placarReal.placar1 && apostaPlacar2 == placarReal.placar2) {
+                    jogador["placares"]++
+                }
+                if (Math.sign(apostaPlacar1 - apostaPlacar2) == Math.sign(placarReal.placar1 - placarReal.placar2)) {
+                    jogador["resultados"]++
+                }
+            }
+            classificacao.push(jogador)
+
+            // Critérios de desempate
+            classificacao.sort((a,b) => (a.nome.localeCompare(b.nome))) // Ordem alfabética
+            classificacao.sort((a,b) => (a.resultados <= b.resultados) ? 1 : -1)
+            classificacao.sort((a,b) => (a.placares <= b.placares) ? 1 : -1)
+            classificacao.sort((a,b) => (a.pontos <= b.pontos) ? 1 : -1)
+
+            // Cálculo das posições
+            for (let i = 1; i < classificacao.length; i++) {
+                const atual = classificacao[i]
+                const anterior = classificacao[i-1]
+                if (
+                    atual.pontos == anterior.pontos &&
+                    atual.placares == anterior.placares &&
+                    atual.resultados == anterior.resultados
+                ) {
+                    atual.pos = anterior.pos
+                }
+                else {
+                    atual.pos = i+1
+                }
+            }
         }
-        else {
-            atual.pos = i+1
-        }
+        classificacaoPorData.push(classificacao)
     }
+
+    const classificacaoAtual = classificacaoPorData[classificacaoPorData.length - 1]
+    const classificacaoAnterior = classificacaoPorData[classificacaoPorData.length - 2]
+    for (const jogador of classificacaoAtual) {
+        const posAnterior = classificacaoAnterior.find(j => j.nome === jogador.nome).pos
+        const posAtual = jogador.pos
+        jogador.var = posAtual - posAnterior
+    }
+    
     // Eu coloquei esses console.log para ver se tudo está sendo calculado corretamente
-    return classificacao
+    return classificacaoAtual
 }

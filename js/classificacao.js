@@ -4,8 +4,8 @@ function preConstruirTabela() {
     // Pré-construir a tabela, para que a página não fique vazia até ter um retorno da API
     for (let i = 0; i < apostas.length; i++) {
         const row = document.createElement("tr")
-        const tds = ["", apostas[i].nome, "", "", ""]
-        const aligns = ["center", "left", "center", "center", "center"]
+        const tds = ["", "", apostas[i].nome, "", "", ""]
+        const aligns = ["center", "center", "left", "center", "center", "center"]
         for (let j = 0; j < tds.length; j++) {
             const tdObj = document.createElement("td")
             tdObj.innerHTML = tds[j]
@@ -29,11 +29,21 @@ function construirTabela(placaresReais) {
 	for (let i = 0; i < classificacao.length; i++) {
 		const row = tbodyClassificacao.children[i]
 		const td = []
-		td[0] = classificacao[i]["pos"] == null ? "" : classificacao[i]["pos"] + "º"
-		td[1] = classificacao[i]["nome"]
-		td[2] = classificacao[i]["pontos"]
-		td[3] = classificacao[i]["placares"]
-		td[4] = classificacao[i]["resultados"]
+        let v = ""
+        if (classificacao[i]["var"] != 0) {
+            if (classificacao[i]["var"] > 0) {
+                v = "<span class='var-vermelho'>" + classificacao[i]["var"] + "⮟</span>"
+            }
+            else {
+                v = "<span class='var-verde'>" + (-classificacao[i]["var"]) + "⮝</span>"
+            }
+        }
+		td[0] = v
+		td[1] = classificacao[i]["pos"] == null ? "" : classificacao[i]["pos"] + "º"
+		td[2] = classificacao[i]["nome"]
+		td[3] = classificacao[i]["pontos"]
+		td[4] = classificacao[i]["placares"]
+		td[5] = classificacao[i]["resultados"]
 		for (let j = 0; j < td.length; j++) {
 			row.children[j].innerHTML = td[j]
 		}
