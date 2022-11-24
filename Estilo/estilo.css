@@ -180,3 +180,10 @@ th{
 .table-striped>tbody>tr:nth-child(even)>td, .table-striped>thead>tr:nth-child(odd)>th {
     background-color: var(--cor-primaria-escura);
 }
+
+.var-verde {
+    color: lightgreen;
+}
+.var-vermelho {
+    color: rgb(255, 100, 100);
+}

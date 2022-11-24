@@ -1,103 +1,11 @@
-// Esta função pega os dados usando a API da FIFA e transforma uma lista de {'placar1', 'placar2'},
-// e converte os IDs para a ordem que a gente tá usando (pela ordem em id_jogos.js)
-async function pegarDadosReais() {
-    // Esse link da FIFA está funcionando bem para pegar os resultados. Vamos torcer para que
-    // funcione bem durante a copa! Qualquer coisa a gente pode mudar o endereço depois
-    const FIFA_API_URL = "https://api.fifa.com/api/v3/calendar/matches?from=2022-11-19T00%3A00%3A00Z&to=2022-12-02T23%3A59%3A59Z&language=en&count=500&idCompetition=17"
-    const placares = await (await fetch(FIFA_API_URL)).json()
-    const dadosFiltrados = []
-    // id_jogos vem de id_jogos.js
-    for (const id of id_jogos) {
-        const placar = placares.Results.find(obj => obj.IdMatch == id)
-        dadosFiltrados.push({
-            'time1': placar.Home.Abbreviation,
-            'time2': placar.Away.Abbreviation,
-            'placar1': placar.Home.Score,
-            'placar2': placar.Away.Score
-        })
-    }
-    // Eu coloquei esse console.log para ver se os dados estão vindo corretamente, mas pode tirar
-    console.log("Placares reais")
-    console.log(dadosFiltrados)
-    return dadosFiltrados
-}
-
-function calcularPontuacaoPalpite(placarPalpite1, placarPalpite2, placarReal1, placarReal2) {
-    let pontos = 0
-    pontos += (placarPalpite1 == placarReal1 || placarPalpite2 == placarReal2) * 2;
-    pontos += (Math.sign(placarPalpite1 - placarPalpite2) == Math.sign(placarReal1 - placarReal2)) * 5;
-    pontos += (placarPalpite1 == placarReal1 && placarPalpite2 == placarReal2) * 3;
-    return pontos
-}
-
-function calcularClassificacao(placaresReais) {
-    // const placaresReais = await pegarDadosReais()
-    // Essas quatro linhas a seguir é só pra testar um resultado qualquer nos primeiros jogos.
-    // Lembre de tirar antes de subir a página!
-    // placaresReais[0].placar1 = 0
-    // placaresReais[0].placar2 = 2
-    // placaresReais[1].placar1 = 1
-    // placaresReais[1].placar2 = 0
-    const classificacao = []
-    // apostas vem de apostas.js
-    for (const aposta of apostas) {
-        const jogador = {"pos": 1, "nome": aposta.nome, "placares": 0, "resultados": 0, "pontos": 0}
-        for (let i = 0; i < 48; i++) {
-            const placarReal = placaresReais[i]
-            // Se não tiver resultado disponível, ignora essa iteração
-            if (placarReal.placar1 === null || placarReal.placar2 === null) {
-                continue
-            }
-            const apostaPlacar1 = aposta[`Jogo-A-${i+1}`]
-            const apostaPlacar2 = aposta[`Jogo-B-${i+1}`]
-            jogador["pontos"] += calcularPontuacaoPalpite(
-                apostaPlacar1, apostaPlacar2, placarReal.placar1, placarReal.placar2
-            )
-            if (apostaPlacar1 == placarReal.placar1 && apostaPlacar2 == placarReal.placar2) {
-                jogador["placares"]++
-            }
-            if (Math.sign(apostaPlacar1 - apostaPlacar2) == Math.sign(placarReal.placar1 - placarReal.placar2)) {
-                jogador["resultados"]++
-            }
-        }
-        classificacao.push(jogador)
-    }
-    // Critérios de desempate
-    classificacao.sort((a,b) => (a.nome.localeCompare(b.nome))) // Ordem alfabética
-    classificacao.sort((a,b) => (a.resultados <= b.resultados) ? 1 : -1)
-    classificacao.sort((a,b) => (a.placares <= b.placares) ? 1 : -1)
-    classificacao.sort((a,b) => (a.pontos <= b.pontos) ? 1 : -1)
-    // Cálculo das posições
-    for (let i = 1; i < classificacao.length; i++) {
-        const atual = classificacao[i]
-        const anterior = classificacao[i-1]
-        if (
-            atual.pontos == anterior.pontos &&
-            atual.placares == anterior.placares &&
-            atual.resultados == anterior.resultados
-        ) {
-            atual.pos = null
-        }
-        else {
-            atual.pos = i+1
-        }
-    }
-    // Eu coloquei esses console.log para ver se tudo está sendo calculado corretamente
-    console.log("Apostas")
-    console.log(apostas)
-    console.log("Classificação")
-    console.log(classificacao)
-    return classificacao
-}
-
 function preConstruirTabela() {
     const tbodyClassificacao = document.getElementById("tbodyClassificacao")
 
     // Pré-construir a tabela, para que a página não fique vazia até ter um retorno da API
     for (let i = 0; i < apostas.length; i++) {
         const row = document.createElement("tr")
-        const tds = ["", apostas[i].nome, "", "", ""]
-        const aligns = ["center", "left", "center", "center", "center"]
+        const tds = ["", "", apostas[i].nome, "", "", ""]
+        const aligns = ["center", "center", "left", "center", "center", "center"]
         for (let j = 0; j < tds.length; j++) {
             const tdObj = document.createElement("td")
             tdObj.innerHTML = tds[j]
@@ -112,25 +20,45 @@ function construirTabela(placaresReais) {
     const tbodyClassificacao = document.getElementById("tbodyClassificacao")
 
     const classificacao = calcularClassificacao(placaresReais)
+
+    console.log("Apostas")
+    console.log(apostas)
+    console.log("Classificação")
+    console.log(classificacao)
 	
 	for (let i = 0; i < classificacao.length; i++) {
 		const row = tbodyClassificacao.children[i]
 		const td = []
-		td[0] = classificacao[i]["pos"] == null ? "" : classificacao[i]["pos"] + "º"
-		td[1] = classificacao[i]["nome"]
-		td[2] = classificacao[i]["pontos"]
-		td[3] = classificacao[i]["placares"]
-		td[4] = classificacao[i]["resultados"]
+        let v = ""
+        if (classificacao[i]["var"] != 0) {
+            if (classificacao[i]["var"] > 0) {
+                v = "<span class='var-vermelho'>" + classificacao[i]["var"] + "↓</span>"
+            }
+            else {
+                v = "<span class='var-verde'>" + (-classificacao[i]["var"]) + "↑</span>"
+            }
+        }
+		td[0] = v
+        td[1] = classificacao[i]["pos"] + "º"
+        if (i > 0) {
+            if (classificacao[i]["pos"] == classificacao[i-1]["pos"]) { 
+                td[1] = ""
+            }
+        }
+		td[2] = classificacao[i]["nome"]
+		td[3] = classificacao[i]["pontos"]
+		td[4] = classificacao[i]["placares"]
+		td[5] = classificacao[i]["resultados"]
 		for (let j = 0; j < td.length; j++) {
 			row.children[j].innerHTML = td[j]
 		}
 	}
 }
 
-function criarPlacar(jogo, timeA, timeB, placarA, placarB) {
+function criarPlacar(estadio, data, timeA, timeB, placarA, placarB) {
     const dataLocal = document.createElement("div")
     dataLocal.setAttribute("class","data-local")
-    dataLocal.innerText = datas[jogo].toUpperCase() +" - "+ estadios[ordemEstadios[jogo]-1]
+    dataLocal.innerText = data.toUpperCase() +" - "+ estadio
 
     const bandeira1 = document.createElement("img")
     bandeira1.setAttribute("id","bandeira1")
@@ -186,19 +114,35 @@ function criarPlacar(jogo, timeA, timeB, placarA, placarB) {
 function construirPlacares(placaresReais) {
     const resultadosOficiais = document.getElementById("resultados-oficiais")
 
+    const jogos = []
+    const estadiosJogos = []
+    const datasJogos = []
+    const ordem = []
+
     let jogo = 0
     for (let a = 1; a < 9; a++) {
         for (let i = 0; i < 6; i++) {
-            const placar = criarPlacar(
-                jogo,
+            jogos.push([
                 selecoes[a-1][ordem1[i]-1],
-                selecoes[a-1][ordem2[i]-1],
-                placaresReais[ordemJogos[jogo]-1].placar1,
-                placaresReais[ordemJogos[jogo]-1].placar2,
-            )
-            resultadosOficiais.appendChild(placar)
+                selecoes[a-1][ordem2[i]-1]
+            ])
+            estadiosJogos.push(estadios[ordemEstadios[jogo]-1])
+            datasJogos.push(datas[jogo])
+            ordem[ordemJogos[jogo]-1] = jogo
             jogo++
         }
+    }
+
+    for (let i = 0; i < 48; i++) {
+        const placar = criarPlacar(
+            estadiosJogos[ordem[i]],
+            datasJogos[ordem[i]],
+            jogos[ordem[i]][0],
+            jogos[ordem[i]][1],
+            placaresReais[i].placar1,
+            placaresReais[i].placar2
+        )
+        resultadosOficiais.appendChild(placar)
     }
 }
 
