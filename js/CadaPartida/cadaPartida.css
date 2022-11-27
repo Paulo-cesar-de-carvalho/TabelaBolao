@@ -1,0 +1,15 @@
+body{
+    background-color: lightgoldenrodyellow;
+}
+
+table{
+    border-collapse: collapse;
+    margin: 30px auto;
+    color: aliceblue;
+    
+}
+
+td, th{
+    border: 1px solid black;
+    padding: 2px;
+}
