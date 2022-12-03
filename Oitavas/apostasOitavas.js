@@ -79,7 +79,7 @@ const apostas = [
         "nome": "Morgana Beatriz de Faria Koziolek",
         "Jogo-A-1": "1",
         "Jogo-B-1": "1",
-        "Jogo-A-2": "6",
+        "Jogo-A-2": "3",
         "Jogo-B-2": "0",
         "Jogo-A-3": "1",
         "Jogo-B-3": "1",
@@ -98,7 +98,7 @@ const apostas = [
         "nome": "Ryszard Koziolek ",
         "Jogo-A-1": "2",
         "Jogo-B-1": "0",
-        "Jogo-A-2": "5",
+        "Jogo-A-2": "3",
         "Jogo-B-2": "1",
         "Jogo-A-3": "0",
         "Jogo-B-3": "0",
@@ -812,7 +812,7 @@ const apostas = [
         "Jogo-A-6": "2",
         "Jogo-B-6": "1",
         "Jogo-A-7": "0",
-        "Jogo-B-7": "11",
+        "Jogo-B-7": "1",
         "Jogo-A-8": "1",
         "Jogo-B-8": "1"
     },
@@ -854,25 +854,7 @@ const apostas = [
         "Jogo-A-8": "2",
         "Jogo-B-8": "1"
     },
-    {
-        "nome": "Benedita Mendes Dorta",
-        "Jogo-A-1": "2",
-        "Jogo-B-1": "1",
-        "Jogo-A-2": "1",
-        "Jogo-B-2": "1",
-        "Jogo-A-3": "2",
-        "Jogo-B-3": "1",
-        "Jogo-A-4": "1",
-        "Jogo-B-4": "0",
-        "Jogo-A-5": "2",
-        "Jogo-B-5": "0",
-        "Jogo-A-6": "2",
-        "Jogo-B-6": "1",
-        "Jogo-A-7": "2",
-        "Jogo-B-7": "1",
-        "Jogo-A-8": "1",
-        "Jogo-B-8": "2"
-    },
+   
     {
         "nome": "Marisa Amélia Modesto Vieira",
         "Jogo-A-1": "2",
@@ -1119,5 +1101,26 @@ const apostas = [
         "Jogo-B-7": "2",
         "Jogo-A-8": "2",
         "Jogo-B-8": "0"
+    },
+    {
+        "nome": "André Luiz Junqueira",
+        "Jogo-A-1": "2",
+        "Jogo-B-1": "1",
+        "Jogo-A-2": "2",
+        "Jogo-B-2": "0",
+        "Jogo-A-3": "2",
+        "Jogo-B-3": "0",
+        "Jogo-A-4": "2",
+        "Jogo-B-4": "0",
+        "Jogo-A-5": "1",
+        "Jogo-B-5": "2",
+        "Jogo-A-6": "2",
+        "Jogo-B-6": "0",
+        "Jogo-A-7": "0",
+        "Jogo-B-7": "2",
+        "Jogo-A-8": "1",
+        "Jogo-B-8": "0"
     }
 ]
+
+console.log(apostas.length)
