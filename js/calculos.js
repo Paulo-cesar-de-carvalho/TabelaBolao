@@ -3,7 +3,7 @@
 async function pegarDadosReais() {
     // Esse link da FIFA está funcionando bem para pegar os resultados. Vamos torcer para que
     // funcione bem durante a copa! Qualquer coisa a gente pode mudar o endereço depois
-    const FIFA_API_URL = "https://api.fifa.com/api/v3/calendar/matches?from=2022-11-19T00%3A00%3A00Z&to=2022-12-02T23%3A59%3A59Z&language=en&count=500&idCompetition=17"
+    const FIFA_API_URL = "https://api.fifa.com/api/v3/calendar/matches?from=2022-11-19T00%3A00%3A00Z&to=2022-12-06T23%3A59%3A59Z&language=en&count=500&idCompetition=17"
     const placares = await (await fetch(FIFA_API_URL)).json()
     const dadosFiltrados = []
     const horaAtual = new Date()
@@ -90,7 +90,6 @@ function calcularClassificacao(placaresReais) {
             classificacao.push(jogador)
 
             // Critérios de desempate
-            classificacao.sort((a,b) => (a.nome.localeCompare(b.nome))) // Ordem alfabética
             classificacao.sort((a,b) => (a.resultados <= b.resultados) ? 1 : -1)
             classificacao.sort((a,b) => (a.placares <= b.placares) ? 1 : -1)
             classificacao.sort((a,b) => (a.pontos <= b.pontos) ? 1 : -1)
@@ -111,17 +110,16 @@ function calcularClassificacao(placaresReais) {
                 }
             }
         }
-        classificacaoPorData.push(classificacao)
+        classificacaoPorData.push({data: data, classificacao: classificacao})
     }
 
-    const classificacaoAtual = classificacaoPorData[classificacaoPorData.length - 1]
-    const classificacaoAnterior = classificacaoPorData[classificacaoPorData.length - 2]
-    for (const jogador of classificacaoAtual) {
-        const posAnterior = classificacaoAnterior.find(j => j.nome === jogador.nome).pos
-        const posAtual = jogador.pos
-        jogador.var = posAtual - posAnterior
-    }
+    const classificacaoAtual = classificacaoPorData[classificacaoPorData.length - 1].classificacao
+    // const classificacaoAnterior = classificacaoPorData[classificacaoPorData.length - 2].classificacao
+    // for (const jogador of classificacaoAtual) {
+    //     const posAnterior = classificacaoAnterior.find(j => j.nome === jogador.nome).pos
+    //     const posAtual = jogador.pos
+    //     jogador.var = posAtual - posAnterior
+    // }
     
-    // Eu coloquei esses console.log para ver se tudo está sendo calculado corretamente
-    return classificacaoAtual
+    return { classificacaoPorData: classificacaoPorData, classificacaoAtual: classificacaoAtual }
 }

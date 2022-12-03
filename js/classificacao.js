@@ -19,36 +19,36 @@ function preConstruirTabela() {
 function construirTabela(placaresReais) {
     const tbodyClassificacao = document.getElementById("tbodyClassificacao")
 
-    const classificacao = calcularClassificacao(placaresReais)
+    const {classificacaoAtual} = calcularClassificacao(placaresReais)
 
     console.log("Apostas")
     console.log(apostas)
     console.log("Classificação")
-    console.log(classificacao)
+    console.log(classificacaoAtual)
 	
-	for (let i = 0; i < classificacao.length; i++) {
+	for (let i = 0; i < classificacaoAtual.length; i++) {
 		const row = tbodyClassificacao.children[i]
 		const td = []
         let v = ""
-        if (classificacao[i]["var"] != 0) {
-            if (classificacao[i]["var"] > 0) {
-                v = "<span class='var-vermelho'>" + classificacao[i]["var"] + "↓</span>"
+        if (classificacaoAtual[i]["var"] != 0) {
+            if (classificacaoAtual[i]["var"] > 0) {
+                v = "<span class='var-vermelho'>" + classificacaoAtual[i]["var"] + "↓</span>"
             }
             else {
-                v = "<span class='var-verde'>" + (-classificacao[i]["var"]) + "↑</span>"
+                v = "<span class='var-verde'>" + (-classificacaoAtual[i]["var"]) + "↑</span>"
             }
         }
 		td[0] = v
-        td[1] = classificacao[i]["pos"] + "º"
+        td[1] = classificacaoAtual[i]["pos"] + "º"
         if (i > 0) {
-            if (classificacao[i]["pos"] == classificacao[i-1]["pos"]) { 
+            if (classificacaoAtual[i]["pos"] == classificacaoAtual[i-1]["pos"]) { 
                 td[1] = ""
             }
         }
-		td[2] = classificacao[i]["nome"]
-		td[3] = classificacao[i]["pontos"]
-		td[4] = classificacao[i]["placares"]
-		td[5] = classificacao[i]["resultados"]
+		td[2] = classificacaoAtual[i]["nome"]
+		td[3] = classificacaoAtual[i]["pontos"]
+		td[4] = classificacaoAtual[i]["placares"]
+		td[5] = classificacaoAtual[i]["resultados"]
 		for (let j = 0; j < td.length; j++) {
 			row.children[j].innerHTML = td[j]
 		}
