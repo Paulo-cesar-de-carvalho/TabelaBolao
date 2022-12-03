@@ -129,6 +129,12 @@ function construirPlacares(placaresReais) {
 async function construirPagina() {
     preConstruirTabela()
     const placaresReais = await pegarDadosReais()
+    // Caso precise editar, deverá ser feito desta forma:
+    // placaresReais[num_jogo].placar1 = resultado_placar1
+    // placaresReais[num_jogo].placar2 = resultado_placar2
+    // Como exemplo, se o segundo jogo (id 1) ficar 2x0:
+    // placaresReais[1].placar1 = 2
+    // placaresReais[1].placar2 = 0
     construirTabela(placaresReais)
     construirPlacares(placaresReais)
 }
