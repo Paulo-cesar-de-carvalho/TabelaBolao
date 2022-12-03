@@ -114,12 +114,14 @@ function calcularClassificacao(placaresReais) {
     }
 
     const classificacaoAtual = classificacaoPorData[classificacaoPorData.length - 1].classificacao
-    // const classificacaoAnterior = classificacaoPorData[classificacaoPorData.length - 2].classificacao
-    // for (const jogador of classificacaoAtual) {
-    //     const posAnterior = classificacaoAnterior.find(j => j.nome === jogador.nome).pos
-    //     const posAtual = jogador.pos
-    //     jogador.var = posAtual - posAnterior
-    // }
+    if (classificacaoPorData.length > 1) {
+        const classificacaoAnterior = classificacaoPorData[classificacaoPorData.length - 2].classificacao
+        for (const jogador of classificacaoAtual) {
+            const posAnterior = classificacaoAnterior.find(j => j.nome === jogador.nome).pos
+            const posAtual = jogador.pos
+            jogador.var = posAtual - posAnterior
+        }
+    }
     
     return { classificacaoPorData: classificacaoPorData, classificacaoAtual: classificacaoAtual }
 }
