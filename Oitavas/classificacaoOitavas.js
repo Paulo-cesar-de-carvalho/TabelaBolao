@@ -63,13 +63,13 @@ function criarPlacar(dataLocal, timeA, timeB, placarA, placarB) {
     const bandeira1 = document.createElement("img")
     bandeira1.setAttribute("id","bandeira1")
     bandeira1.setAttribute("class","bandeira")
-    bandeira1.setAttribute("src",`/Imagens/Bandeiras/${timeA}.png`)
+    bandeira1.setAttribute("src",`../Imagens/Bandeiras/${timeA}.png`)
     bandeira1.setAttribute("alt","Imagem Bandeira "+ timeA)
 
     const bandeira2 = document.createElement("img")
     bandeira2.setAttribute("id","bandeira2")
     bandeira2.setAttribute("class","bandeira")
-    bandeira2.setAttribute("src",`/Imagens/Bandeiras/${timeB}.png`)
+    bandeira2.setAttribute("src",`../Imagens/Bandeiras/${timeB}.png`)
     bandeira2.setAttribute("alt","Imagem Bandeira "+ timeB)
 
     const selecao1 = document.createElement("span")
