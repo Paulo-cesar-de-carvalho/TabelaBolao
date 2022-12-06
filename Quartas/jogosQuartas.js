@@ -1,6 +1,6 @@
 
 // ordem jogos:
-let selecoesMandantes = ["Croácia","Holanda","Espanha", "Inglaterra"]
+let selecoesMandantes = ["Croácia","Holanda","Marrocos", "Inglaterra"]
 let selecoesVisitante = ["Brasil", "Argentina", "Portugal", "França"]
 
 const dataHoraOitavas = ["09/12/22 sex 12:00 - Estádio da Educação, Al Rayyan","09/12/22 sex 16:00 - Estádio Lusail, Lusail",
