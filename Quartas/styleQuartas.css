@@ -1,0 +1,15 @@
+
+.atencao{
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 25px;
+}
+
+
+@media (min-width:750px){
+    body{
+        max-width: 800px;
+    }
+    
+}

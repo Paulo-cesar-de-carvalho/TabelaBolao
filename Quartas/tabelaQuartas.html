@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bolão Quartas</title>
+    <link rel="icon" href="../Auxiliar/Taça Catar.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="../Estilo/estilo.css">
+    <link rel="stylesheet" href="styleQuartas.css">
+   
+</head>
+<body>
+
+    <header>
+        
+        <h1>Bolão Copa do Mundo - Catar - 2022</h1>
+        <h1>Fase quartas-de-final</h1>
+        <h2 id="encerramento"></h2>
+        <h2><a href="https://paulo-cesar-de-carvalho.github.io/TodasAsCopas/" target="_blank" rel="noopener noreferrer">Inspire-se em outras Copas clicando aqui</a></h2>
+    </header>    
+    <main>
+        <form action="https://taleshen-m687jch456ev0hk4.socketxp.com/aposta" method="post" autocomplete="on">
+            <p class="dados-pessoais"><label for="nome-completo" >Informe seu nome completo: </label> <input type="text" name="nome" id="nome-completo" class="texto" required placeholder="Digite seu nome completo aqui" autocomplete="name">  </p>
+            <p  class="dados-pessoais"><label for="cidade">Informe sua cidade: </label> <input type="text" name="cidade" id="cidade" class="texto" Placeholder="Digite sua cidade aqui" > </p>
+            <p  class="dados-pessoais">
+                <label>Informe seu celular:  <input type="tel" name="celular" id="celular" class="texto" Placeholder="(XX) XXXXX - XXXX" required maxlength="17"></label>
+            </p>
+            <p  class="dados-pessoais"><label for="email">Infome seu e-mail: </label> <input type="email" name="e-mail" class="texto" id="email" placeholder="Digite seu e-mail aqui"></p>
+            <p  class="dados-pessoais"> 
+                <label for="grupo-whatsapp">Deseja participar do grupo do bolão no whatsapp? </label>
+                <select name="grupo-whatsapp" id="grupo-whatsapp" class="sim-nao" required>
+                    <option value="Sim"></option>
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
+            </p>
+            <p  class="dados-pessoais"> 
+                <input type="checkbox" name="concordo-regras" id="concordo" required>
+                <label for="concordo">Li e concordo com as regras do bolão. Chave pix - Celular (35)99982-7930 - Valor: R$30,00 </label><br><br>
+                <a href="regrasQuartas.html">Clique aqui para ler as regras do bolão</a>
+            </p>
+            
+            <p class="atencao"><strong>Atenção!!!</strong>   Resultado considerado: tempo regulamentar mais acréscimos. Não serão considerados os resultado obtidos nas prorrogações e pênaltis</p>
+            <section id="tabela" class="tabela"></section>
+            
+
+            <input type="text" name="data" id="data" class="invisivel">
+
+            <p class="dados-pessoais">
+                <label for="pix">Já fez o pix? </label>
+                <select name="pix" id="pix" class="sim-nao" required>
+                    <option value=""></option>
+                    <option value="">Sim</option>
+                    <option value="">Não</option>
+                </select>
+            </p><br>
+
+            <p class="dados-pessoais">
+                <label for="btn-enviar">Confira todos os dados e clique em enviar:</label> 
+                <input type="submit" value="Enviar" class="botao" id="btn-enviar">
+            </p> 
+            
+        </form>            
+    </main>
+    
+    <footer>
+        <p class="dados-pessoais">Após enviar, aguarde sua confirmação de participação por e-mail ou whatsapp. Boa Sorte! Dúvidas: whatsapp (35) 99982-7930.</p>
+        
+
+    </footer>
+    <script src="../js/selecoes.js"></script>
+    <script src="../js/tabela.js"></script>
+    <script src="jogosQuartas.js"></script>
+    <script src="tabelaQuartas.js"></script>
+    <script src="../js/envio.js"></script>
+    
+
+</body>
+</html> 
